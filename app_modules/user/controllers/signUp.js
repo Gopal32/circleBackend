@@ -42,7 +42,7 @@ const controllerSignUp = (req, res) => {
     .then(data => {
       __logger.info('controllerSignUp :: signUp function', data)
       // if (data && data.valid && data.validators && data.validators.mx && data.validators.mx.valid && data.validators.smtp && data.validators.smtp.valid) {
-      return userService.createUser(req.body.email)
+      return userService.createUser(req.body.email, __constants.PROVIDER_TYPE.email)
       // } else {
       //   return __util.send(res, { type: __constants.RESPONSE_MESSAGES.EMAIL_NOT_VALID, data: {}, err: [] })
       // }
@@ -58,37 +58,33 @@ const controllerSignUp = (req, res) => {
     })
     .catch(err => {
       __logger.error('controllerSignUp :: signUp function :: error: ', err)
-      return __util.send(res, { type: err.type || __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err.err })
+      return __util.send(res, { type: err.type || __constants.RESPONSE_MESSAGES.SERVER_ERROR, data: err.data, err: err.err })
     })
 }
 
 const resendOtp = (req, res) => {
   __logger.info('Inside resend OTP')
+  const validate = new ValidatonService()
   const verificationService = new VerificationService()
   const userService = new UserService()
-  if (!req.body.userId || req.body.userId === '0') {
-    return __util.send(res, { type: __constants.RESPONSE_MESSAGES.INVALID_REQUEST, data: {}, err: ['please provide userId of type string'] })
-  }
-  emailValidator.validate(req.body.email)
+  let userDetails 
+  validate.checkUserId(req.body)
     .then(data => {
       __logger.info('resendOtp function', data)
-      // if (data && data.valid && data.validators && data.validators.mx && data.validators.mx.valid && data.validators.smtp && data.validators.smtp.valid) {
-      return userService.getUserDataByEmailAndUserId(req.body.email, req.body.userId)
-      // } else {
-      //   return __util.send(res, { type: __constants.RESPONSE_MESSAGES.EMAIL_NOT_VALID, data: {} })
-      // }
+      return userService.getUserDataByEmailAndUserId(req.body.userId)
     })
     .then(data => {
+      userDetails = data[0]
       if (data && data.length > 0) {
-        return verificationService.addVerificationCode(data[0].userId, __constants.VERIFICATION_CHANNEL.email.expiresIn, __constants.VERIFICATION_CHANNEL.email.codeLength)
+        return verificationService.addVerificationCode(userDetails.userId, __constants.VERIFICATION_CHANNEL.email.expiresIn, __constants.VERIFICATION_CHANNEL.email.codeLength)
       } else {
         __util.send(res, { type: __constants.RESPONSE_MESSAGES.USER_NOT_EXIST })
       }
     })
-    .then(data => { return verificationService.sendVerificationCodeByEmail(data.code, req.body.email) })
+    .then(data => { return verificationService.sendVerificationCodeByEmail(data.code, userDetails.email) })
     .then(data => {
       __logger.info('resendOtp function :: Then 1', { data })
-      return __util.send(res, { type: __constants.RESPONSE_MESSAGES.EMAIL_VC, data: { userId: req.body.userId } })
+      return __util.send(res, { type: __constants.RESPONSE_MESSAGES.EMAIL_VC, data: { userId: userDetails.userId } })
     })
     .catch(err => {
       __logger.error('resendOtp function :: error: ', err)
@@ -100,16 +96,17 @@ const setUsername = (req, res) => {
   __logger.info('Inside setUsername')
   const validate = new ValidatonService()
   const userService = new UserService()
+  const subscriptionId = 'free_plan'
   validate.setUser(req.body)
     .then(data => {
       __logger.info('setUsername function', data)
       return userService.checkUserDetails(req.body.userName)
     })
-    .then(data => { return userService.setPassword(req.body.userId, req.body.password, __constants.SUBSCRIPTION[req.body.subscriptionId]) })
-    .then(data => { return userService.setUserdetails(req.body.userId, req.body.userName, req.body.fullName) })
+    .then(data => { return userService.setPassword(req.body.userId, req.body.password) })
+    .then(data => { return userService.setUserdetails(req.body.userId, req.body.userName, req.body.fullName, __constants.SUBSCRIPTION[subscriptionId]) })
     .then(data => {
       __logger.info('setUsername function :: Then 1', { data })
-      const payload = { userId: req.body.userId, signupType: req.body.signupType, subscriptionId: __constants.SUBSCRIPTION[req.body.subscriptionId] }
+      const payload = { userId: req.body.userId, signupType: req.body.signupType, subscriptionId: __constants.SUBSCRIPTION[subscriptionId] }
       const token = authMiddleware.setToken(payload, __constants.CUSTOM_CONSTANT.SESSION_TIME)
       return __util.send(res, { type: __constants.RESPONSE_MESSAGES.SUCCESS, data: { token: token } })
     })

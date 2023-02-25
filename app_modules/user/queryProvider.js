@@ -3,17 +3,27 @@
 // const columnMapService = new ColumnMapService()
 // todo : remove waba dependency
 
-const getUserDetailsByEmail = (userId) => {
-  let findUserId = ''
-  if (userId) findUserId = 'and u.user_id = ?'
+const getUserDataByEmailOrUsername = () => {
   return `select u.user_id as userId, email, salt_key as saltKey, hash_password as hashPassword, signup_type as signupType
   from users u
-  where lower(u.email) = lower(?) ${findUserId} and u.is_active = true`
+  join user_details ud on ud.created_by = u.user_id and ud.is_active = true
+  where ud.username = ? or lower(u.email) = lower(?) and u.is_active = true and u.is_verified = true and u.is_profile_completed = true`
 }
 
+const getUserDataByEmail = () => {
+  return `select u.user_id as userId, email, salt_key as saltKey, hash_password as hashPassword, signup_type as signupType, u.is_verified as isVerified, u.is_profile_completed as isProfileCompleted
+  from users u
+  where lower(u.email) = lower(?) and u.is_active = true `
+}
+
+const getUserDetailsByUserId = () => {
+  return `select u.user_id as userId, email, salt_key as saltKey, hash_password as hashPassword, signup_type as signupType
+  from users u
+  where u.user_id = ? and u.is_active = true`
+}
 const createUser = () => {
-  return `insert into users ( email, user_id,created_by,created_on, signup_type) values 
-  (?,?,?, now(), ?)`
+  return `insert into users ( email, user_id,created_by,created_on, signup_type, is_active) values 
+  (?,?,?, now(), ?, 1)`
 }
 
 const getUserDetailsByUsername = () => {
@@ -22,13 +32,13 @@ const getUserDetailsByUsername = () => {
 }
 
 const setUserdetails = () => {
-  return `insert into user_details (user_detail_id, username, full_name, created_on, created_by) values
-  (?,?,?,now(),?)`
+  return `insert into user_details (user_detail_id, username, full_name, plan_id, created_on, created_by, is_profile_completed, is_active) values
+  (?,?,?,?,now(),?, true, true)`
 }
 
 const setUserPwd = () => {
   return `update users 
-  set hash_password =? , salt_key=?, subscription_id =?, updated_on = now(), updated_by = ? 
+  set hash_password =? , salt_key=?, updated_on = now(), updated_by = ? 
   where user_id = ? and is_active = true`
 }
 
@@ -36,6 +46,12 @@ const updatePhotoUrl = () => {
   return `update user_details 
   set photo_url =? , updated_on = now(), updated_by = ? 
   where created_by = ? and is_active = true`
+}
+
+const updateotpVerifed = () => {
+  return `update users 
+  set is_verified = true, is_profile_completed = ?, updated_on = now(), updated_by = ? 
+  where user_id = ? and is_active = true`
 }
 // // Account Profile Queries
 // const getUserDetailsByUserIdForAccountProfile = () => {
@@ -470,12 +486,15 @@ const updatePhotoUrl = () => {
 // }
 module.exports = {
   // getUserRoleData,
-  getUserDetailsByEmail,
+  getUserDataByEmailOrUsername,
   createUser,
   getUserDetailsByUsername,
   setUserdetails,
   setUserPwd,
-  updatePhotoUrl
+  updatePhotoUrl,
+  getUserDetailsByUserId,
+  getUserDataByEmail,
+  updateotpVerifed
   // getUserDetailsByUserIdForAccountProfile,
   // getUserAccountProfile,
   // updateUserAccountProfile,

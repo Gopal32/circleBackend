@@ -16,10 +16,25 @@ class UserData {
     this.uniqueId = new UniqueId()
   }
 
+  getUserDataByEmailOrUsername (emailAndUsername) {
+    __logger.info('dbData: getUserDataByEmailOrUsername(): ', emailAndUsername)
+    const userDetails = q.defer()
+    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDataByEmailOrUsername(), [emailAndUsername, emailAndUsername])
+      .then(result => {
+        __logger.info('dbData: getUserDataByEmailOrUsername(): then 1:', result)
+        userDetails.resolve(result)
+      })
+      .catch(err => {
+        __logger.error('dbData: error in get user function: ', err)
+        userDetails.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err })
+      })
+    return userDetails.promise
+  }
+
   getUserDataByEmail (email) {
     __logger.info('dbData: getUserDataByEmail(): ', email)
     const userDetails = q.defer()
-    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDetailsByEmail(), [email])
+    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDataByEmail(), [email])
       .then(result => {
         __logger.info('dbData: getUserDataByEmail(): then 1:', result)
         userDetails.resolve(result)
@@ -31,10 +46,10 @@ class UserData {
     return userDetails.promise
   }
 
-  getUserDataByEmailAndUserId (email, userId = null) {
-    __logger.info('dbData: getUserDataByEmailAndUserId(): ', email, userId)
+  getUserDataByEmailAndUserId ( userId) {
+    __logger.info('dbData: getUserDataByEmailAndUserId(): ', userId)
     const userDetails = q.defer()
-    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDetailsByEmail(userId), [email, userId])
+    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDetailsByUserId(), [userId])
       .then(result => {
         __logger.info('dbData: getUserDataByEmailAndUserId(): then 1:', result)
         userDetails.resolve(result)
@@ -46,7 +61,7 @@ class UserData {
     return userDetails.promise
   }
 
-  createUser (email) {
+  createUser (email, signupType) {
     __logger.info('dbData: createUser():', email)
     const userCreated = q.defer()
     let userId
@@ -55,7 +70,9 @@ class UserData {
         __logger.info('dbData: createUser(): exists: then 2:', exists)
         if (exists && exists.length === 0) {
           userId = this.uniqueId.uuid()
-          return __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.createUser(), [email, userId, userId, __constants.PROVIDER_TYPE.email])
+          return __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.createUser(), [email, userId, userId, signupType])
+        } else if (exists?.[0]?.isProfileCompleted !== true) {
+          return exists
         } else {
           userCreated.reject({ type: __constants.RESPONSE_MESSAGES.USER_EXIST, data: {} })
         }
@@ -64,13 +81,16 @@ class UserData {
         __logger.info('dbData: createUser(): exists: then 3:', result)
         if (result && result.affectedRows && result.affectedRows > 0) {
           userCreated.resolve({ userId })
+        } else if (result?.[0]?.isVerified !== true) {
+          userCreated.resolve({ userId: result[0].userId})
+        } else if (result?.[0]?.isVerified === true) {
+          userCreated.reject({ type: __constants.RESPONSE_MESSAGES.SUCCESS, data: { userId: result[0].userId, isVerified: result[0].isVerified } })
         } else {
           userCreated.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, data: {} })
         }
       })
       .catch(err => {
-        __logger.info('dbData: createUser(): catch:', err)
-        if (err.type) return userCreated.reject({ type: err.type, err: err.err })
+        __logger.error('dbData: createUser(): catch:', err)
         userCreated.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err })
       })
     return userCreated.promise
@@ -95,11 +115,11 @@ class UserData {
     return userDetails.promise
   }
 
-  setUserdetails (userId, userName, fullName) {
+  setUserdetails (userId, userName, fullName, planId) {
     __logger.info('dbData: setUserdetails(): ')
     const userDetailId = this.uniqueId.uuid()
     const userDetail = q.defer()
-    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.setUserdetails(), [userDetailId, userName, fullName, userId])
+    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.setUserdetails(), [userDetailId, userName, fullName, planId, userId])
       .then(result => {
         __logger.info('dbData: setUserdetails(): then 1:', result)
         userDetail.resolve(result)
@@ -111,12 +131,12 @@ class UserData {
     return userDetail.promise
   }
 
-  setPassword (userId, password, plan) {
+  setPassword (userId, password) {
     __logger.info('dbData: setPassword(): ')
     const passwordSalt = passMgmt.genRandomString(16)
     const hashPassword = passMgmt.create_hash_of_password(password, passwordSalt).passwordHash
     const userPwd = q.defer()
-    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.setUserPwd(), [hashPassword, passwordSalt, plan, userId, userId])
+    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.setUserPwd(), [hashPassword, passwordSalt, userId, userId])
       .then(result => {
         __logger.info('dbData: setPassword(): then 1:', result)
         if (result && result.affectedRows === 1) {
@@ -153,40 +173,59 @@ class UserData {
 
   checkUsernameExist (userName) {
     __logger.info('checkUsernameExist:')
-    const emailExistsOrNot = q.defer()
+    const usernameExistsOrNot = q.defer()
     __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDetailsByUsername(), [userName])
       .then(result => {
         __logger.info('dbData: checkUsernameExist(): then 1:', result)
         if (result && result.length > 0) {
-          emailExistsOrNot.reject({ type: __constants.RESPONSE_MESSAGES.USER_EXIST, data: {} })
+          usernameExistsOrNot.reject({ type: __constants.RESPONSE_MESSAGES.USER_EXIST, data: {} })
         } else {
-          emailExistsOrNot.resolve(result)
+          usernameExistsOrNot.resolve(result)
         }
       })
       .catch(err => {
         __logger.error('checkUsernameExist :: dbData: error in check Username Exist function: ', err)
-        emailExistsOrNot.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err })
+        usernameExistsOrNot.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err })
       })
-    return emailExistsOrNot.promise
+    return usernameExistsOrNot.promise
   }
 
   setPhotoUrl (userId, url) {
     __logger.info('setPhotoUrl:')
-    const emailExistsOrNot = q.defer()
+    const photoUrl = q.defer()
     __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.updatePhotoUrl(), [url, userId, userId])
       .then(result => {
         __logger.info('dbData: setPhotoUrl(): then 1:', result)
         if (result && result.affectedRows === 1) {
-          emailExistsOrNot.resolve(result)
+          photoUrl.resolve(result)
         } else {
-          emailExistsOrNot.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, data: {} })
+          photoUrl.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, data: {} })
         }
       })
       .catch(err => {
         __logger.error('setPhotoUrl :: dbData: error in Update photo function: ', err)
-        emailExistsOrNot.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err })
+        photoUrl.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err })
       })
-    return emailExistsOrNot.promise
+    return photoUrl.promise
+  }
+
+  updateotpVerifed (userId) {
+    __logger.info('updateotpVerifed:')
+    const otpVerified = q.defer()
+    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.updateotpVerifed(), [false, userId, userId])
+      .then(result => {
+        __logger.info('dbData: updateotpVerifed(): then 1:', result)
+        if (result && result.affectedRows === 1) {
+          otpVerified.resolve(result)
+        } else {
+          otpVerified.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, data: {} })
+        }
+      })
+      .catch(err => {
+        __logger.error('updateotpVerifed :: dbData: error in Update photo function: ', err)
+        otpVerified.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err })
+      })
+    return otpVerified.promise
   }
   // checkUserIdExistsForAccountProfile (userId) {
   //   __logger.info('dbData: Check UserId Exists For Account Profile: ', userId)

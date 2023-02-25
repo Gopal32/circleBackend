@@ -856,12 +856,12 @@
         "Login": {
           "title": "Login",
           "required": [
-            "email",
+            "emailOrUsername",
             "password"
           ],
           "type": "object",
           "properties": {
-            "email": {
+            "emailOrUsername": {
               "type": "string",
               "description": "Based on action data will be added"
             },
@@ -870,7 +870,7 @@
             }
           },
           "example": {
-            "email": "example@gmail.com",
+            "emailOrUsername": "example@gmail.com",
             "password": "ABC@123"
           }
         },
@@ -893,8 +893,7 @@
         "ResendOTP": {
           "title": "ResendOTP",
           "required": [
-            "userId",
-            "email"
+            "userId"
           ],
           "type": "object",
           "properties": {
@@ -902,14 +901,8 @@
               "type": "string",
               "description": "Based on action data will be added"
             },
-            "email": {
-              "type": "string",
-              "description": "Based on action data will be added"
-            }
-          },
           "example": {
-            "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2",
-            "email": "example@gmail.com"
+            "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
           }
         },
         "ForgetPwd": {
@@ -934,9 +927,7 @@
             "fullName",
             "password",
             "userName",
-            "userId",
-            "signupType",
-            "subscriptionId"
+            "userId"
           ],
           "type": "object",
           "properties": {
@@ -955,23 +946,13 @@
             "userId": {
               "type": "string",
               "description": "Based on action data will be added"
-            },
-            "signupType": {
-              "type": "string",
-              "description": "Based on action data will be added"
-            },
-            "subscriptionId": {
-              "type": "string",
-              "description": "Based on action data will be added"
             }
           },
           "example": {
             "fullName": "asd sdafas",
             "password": "pass@123",
             "userName": "support_1",
-            "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2",
-            "signupType": "email",
-            "subscriptionId": "free_plan"
+            "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
           }
         },
         "VerifyOTP": {

@@ -14,7 +14,7 @@ class validate {
       type: 'object',
       required: true,
       properties: {
-        email: {
+        emailOrUsername: {
           type: 'string',
           required: true,
           minLength: 1,
@@ -73,16 +73,6 @@ class validate {
           required: true,
           minLength: 1,
           maxLength: 50
-        },
-        signupType: {
-          type: 'string',
-          required: true,
-          enum: ['email', 'google', 'facebook', 'apple']
-        },
-        subscriptionId: {
-          type: 'string',
-          required: true,
-          enum: ['free_plan']
         }
       }
     }
@@ -156,6 +146,37 @@ class validate {
     }
     const formatedError = []
     v.addSchema(schema, '/checkUserNameApi')
+    const error = _.map(v.validate(request, schema).errors, 'stack')
+    _.each(error, function (err) {
+      const formatedErr = err.split('.')
+      formatedError.push(formatedErr[formatedErr.length - 1])
+    })
+    if (formatedError.length > 0) {
+      isvalid.reject({ type: __constants.RESPONSE_MESSAGES.INVALID_REQUEST, err: formatedError })
+    } else {
+      trimInput.singleInputTrim(request)
+        .then(data => isvalid.resolve(data))
+    }
+    return isvalid.promise
+  }
+
+  checkUserId (request) {
+    const isvalid = q.defer()
+    const schema = {
+      id: '/checkUserIdApi',
+      type: 'object',
+      required: true,
+      properties: {
+        userId: {
+          type: 'string',
+          required: true,
+          minLength: 1,
+          maxLength: 50
+        }
+      }
+    }
+    const formatedError = []
+    v.addSchema(schema, '/checkUserIdApi')
     const error = _.map(v.validate(request, schema).errors, 'stack')
     _.each(error, function (err) {
       const formatedErr = err.split('.')

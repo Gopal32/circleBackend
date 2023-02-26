@@ -34,7 +34,7 @@ const controller = (req, res) => {
   validate.login(req.body)
     .then(data => {
       __logger.info('Login :: controller :: Then 1', { data })
-      return userService.getUserDataByEmailOrUsername(req.body.emailAndUsername)
+      return userService.getUserDataByEmailOrUsername(req.body.emailOrUsername)
     })
     .then(data => {
       if (data && data.length > 0) {

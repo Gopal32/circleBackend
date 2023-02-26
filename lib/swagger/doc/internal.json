@@ -1,842 +1,118 @@
 {
-    "openapi": "3.0.1",
-    "servers": [
-      {
-        "url": "http://localhost:3000/demo/api"
-      }
-    ],
-    "info": {
-      "title": "helo whatsapp",
-      "description": "helo whatsapp documentation",
-      "contact": {
-        "name": "vivaconnect support"
-      },
-      "version": "1.0.0"
+  "openapi": "3.0.1",
+  "servers": [
+    {
+      "url": "http://localhost:3000/demo/api"
+    }
+  ],
+  "info": {
+    "title": "helo whatsapp",
+    "description": "helo whatsapp documentation",
+    "contact": {
+      "name": "vivaconnect support"
     },
-    "tags": [
-      {
-        "name": "User",
-        "description": "APIs Manage User"
-      },
-      {
-        "name": "Smpp_Short_Message",
-        "description": "APIs Manage Smpp Short Message"
-      }
-    ],
-    "paths": {
-      "/users/auth/login": {
-        "post": {
-          "tags": [
-            "User"
-          ],
-          "summary": "Login user",
-          "description": "Get all current user details",
-          "requestBody": {
-            "description": "Sample body to be sent for user login",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Login"
-                }
-              }
-            },
-            "required": true
-          },
-          "responses": {
-            "200": {
-              "description": "Returns user data",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 2000,
-                    "msg": "Success",
-                    "data": {
-                      "userId": true,
-                      "token": true
-                    }
-                  }
-                }
-              }
-            },
-            "306": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 3096,
-                    "msg": "User does not exist",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "400": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Unauthorized access",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "401": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Invalid request",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "500": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 5000,
-                    "msg": "Something went wrong. Please try again later.",
-                    "err": true
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/users/signup": {
-        "post": {
-          "tags": [
-            "User"
-          ],
-          "summary": "sign up page",
-          "description": "Enter email",
-          "requestBody": {
-            "description": "Sample body to be sent for user sign up",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Signup"
-                }
-              }
-            },
-            "required": true
-          },
-          "responses": {
-            "200": {
-              "description": "Returns user data",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 2000,
-                    "msg": "Please check your registered email for verification code",
-                    "data": {
-                      "userId": true
-                    }
-                  }
-                }
-              }
-            },
-            "308": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 3008,
-                    "msg": "user already exists..",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "400": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Please Enter valid email ID.",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "401": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Invalid request",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "500": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 5000,
-                    "msg": "Something went wrong. Please try again later.",
-                    "err": true
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/users/resend/otp": {
-        "post": {
-          "tags": [
-            "User"
-          ],
-          "summary": "resend OTP",
-          "description": "Enter email and userId",
-          "requestBody": {
-            "description": "Sample body to be sent for resend otp",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ResendOTP"
-                }
-              }
-            },
-            "required": true
-          },
-          "responses": {
-            "200": {
-              "description": "Returns user data",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 2000,
-                    "msg": "Please check your registered email for verification code",
-                    "data": {
-                      "userId": true
-                    }
-                  }
-                }
-              }
-            },
-            "308": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 3096,
-                    "msg": "User does not exist",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "400": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Please Enter valid email ID.",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "401": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Invalid request",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "500": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 5000,
-                    "msg": "Something went wrong. Please try again later.",
-                    "err": true
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/users/forgetpassword": {
-        "post": {
-          "tags": [
-            "User"
-          ],
-          "summary": "forgetpassword page",
-          "description": "Enter email",
-          "requestBody": {
-            "description": "Sample body to be sent for forget password",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ForgetPwd"
-                }
-              }
-            },
-            "required": true
-          },
-          "responses": {
-            "200": {
-              "description": "Returns user data",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 2000,
-                    "msg": "Please check your registered email for verification code",
-                    "data": {
-                      "userId": true
-                    }
-                  }
-                }
-              }
-            },
-            "308": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 3008,
-                    "msg": "user already exists..",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "400": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Please Enter valid email ID.",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "500": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 5000,
-                    "msg": "Something went wrong. Please try again later.",
-                    "err": true
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/users/setusername": {
-        "patch": {
-          "tags": [
-            "User"
-          ],
-          "summary": "sign up page",
-          "description": "Enter email",
-          "requestBody": {
-            "description": "Sample body to be sent for user sign up",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Setusername"
-                }
-              }
-            },
-            "required": true
-          },
-          "responses": {
-            "200": {
-              "description": "Returns user data",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 2000,
-                    "msg": "Success",
-                    "data": {
-                      "token": true
-                    }
-                  }
-                }
-              }
-            },
-            "306": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 3096,
-                    "msg": "User does not exist",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "308": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 3008,
-                    "msg": "user already exists..",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "400": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Please Enter valid email ID.",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "401": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Invalid request",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "500": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 5000,
-                    "msg": "Something went wrong. Please try again later.",
-                    "err": true
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/users/verification/otp": {
-        "patch": {
-          "tags": [
-            "User"
-          ],
-          "summary": "verification otp page",
-          "description": "Enter code & userId",
-          "requestBody": {
-            "description": "Sample body to be sent for verify otp",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VerifyOTP"
-                }
-              }
-            },
-            "required": true
-          },
-          "responses": {
-            "200": {
-              "description": "Returns user data",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 2000,
-                    "msg": "Success",
-                    "data": {
-                      "userId": true
-                    }
-                  }
-                }
-              }
-            },
-            "401": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Invalid request",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "402": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Invalid code",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "500": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 5000,
-                    "msg": "Something went wrong. Please try again later.",
-                    "err": true
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/users/username/verify/{userName}": {
-        "get": {
-          "tags": [
-            "User"
-          ],
-          "summary": "get user by userid",
-          "description": "check userName exists or not",
-          "parameters": [
-            {
-              "name": "userName",
-              "in": "path",
-              "description": "check userName exists or not",
-              "required": true,
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "User",
+      "description": "APIs Manage User"
+    }
+  ],
+  "paths": {
+    "/users/auth/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Login user",
+        "description": "Get all current user details",
+        "requestBody": {
+          "description": "Sample body to be sent for user login",
+          "content": {
+            "application/json": {
               "schema": {
-                "type": "string"
-              },
-              "examples": {
-                "userName": {
-                  "value": "support_1"
-                }
+                "$ref": "#/components/schemas/Login"
               }
             }
-          ],
-          "responses": {
-            "200": {
-              "description": "Returns distinct account data",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 2000,
-                    "msg": "Success",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "308": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 3008,
-                    "msg": "user already exists..",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "500": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 5000,
-                    "msg": "Something went wrong. Please try again later.",
-                    "err": true
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/users/email/verify/{email}": {
-        "get": {
-          "tags": [
-            "User"
-          ],
-          "summary": "get user by userid",
-          "description": "check email exists or not",
-          "parameters": [
-            {
-              "name": "email",
-              "in": "path",
-              "description": "check email exists or not",
-              "required": true,
-              "schema": {
-                "type": "string"
-              },
-              "examples": {
-                "userName": {
-                  "value": "example@gmail.com"
-                }
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "Returns distinct account data",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 2000,
-                    "msg": "Success",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "308": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 3008,
-                    "msg": "user already exists..",
-                    "data": null
-                  }
-                }
-              }
-            },
-            "500": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 5000,
-                    "msg": "Something went wrong. Please try again later.",
-                    "err": true
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/users/photo": {
-        "put": {
-          "tags": [
-            "User"
-          ],
-          "summary": "update User photo",
-          "description": "update User photo",
-          "security": [
-            {
-              "HeaderAuth": []
-            }
-          ],
-          "requestBody": {
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns user data",
             "content": {
-              "multipart/form-data": {
+              "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "profilePic": {
-                      "type": "string",
-                      "format": "binary"
-                    }
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "userId": true,
+                    "token": true
                   }
                 }
               }
             }
           },
-          "responses": {
-            "200": {
-              "description": "Returns smpp short message csv (download)",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 2000,
-                    "msg": "Success",
-                    "data": {
-                      "name": true,
-                      "data": "t"
-                    }
-                  }
+          "306": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3096,
+                  "msg": "User does not exist",
+                  "data": null
                 }
               }
-            },
-            "400": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "File size or pixel is less than expected",
-                    "data": null,
-                    "err": true
-                  }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Unauthorized access",
+                  "data": null
                 }
               }
-            },
-            "401": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 4000,
-                    "msg": "Please provide a file",
-                    "data": null
-                  }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Invalid request",
+                  "data": null
                 }
               }
-            },
-            "500": {
-              "description": "Bad request",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ApiResponse"
-                  },
-                  "example": {
-                    "code": 5000,
-                    "msg": "Something went wrong. Please try again later.",
-                    "err": true
-                  }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
                 }
               }
             }
@@ -844,154 +120,876 @@
         }
       }
     },
-    "components": {
-      "securitySchemes": {
-        "HeaderAuth": {
-          "type": "apiKey",
-          "in": "header",
-          "name": "Authorization"
+    "/users/signUp": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "sign up page",
+        "description": "Enter email",
+        "requestBody": {
+          "description": "Sample body to be sent for user sign up",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Signup"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns user data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Please check your registered email for verification code",
+                  "data": {
+                    "userId": true,
+                    "isVerified": 1
+                  }
+                }
+              }
+            }
+          },
+          "308": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3008,
+                  "msg": "user already exists..",
+                  "data": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Please Enter valid email ID.",
+                  "data": null
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Invalid request",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
         }
-      },
-      "schemas": {
-        "Login": {
-          "title": "Login",
-          "required": [
-            "emailOrUsername",
-            "password"
-          ],
-          "type": "object",
-          "properties": {
-            "emailOrUsername": {
-              "type": "string",
-              "description": "Based on action data will be added"
-            },
-            "password": {
+      }
+    },
+    "/users/resend/otp": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "resend OTP",
+        "description": "Enter email and userId",
+        "requestBody": {
+          "description": "Sample body to be sent for resend otp",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResendOTP"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns user data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Please check your registered email for verification code",
+                  "data": {
+                    "userId": true
+                  }
+                }
+              }
+            }
+          },
+          "308": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3096,
+                  "msg": "User does not exist",
+                  "data": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Please Enter valid email ID.",
+                  "data": null
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Invalid request",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/forgetpassword": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "forgetpassword page",
+        "description": "Enter email",
+        "requestBody": {
+          "description": "Sample body to be sent for forget password",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgetPwd"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns user data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Please check your registered email for verification code",
+                  "data": {
+                    "userId": true
+                  }
+                }
+              }
+            }
+          },
+          "308": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3008,
+                  "msg": "user does not exist",
+                  "data": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Please Enter valid email ID.",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/setusername": {
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "sign up page",
+        "description": "Enter email",
+        "requestBody": {
+          "description": "Sample body to be sent for user sign up",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Setusername"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns user data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "token": true
+                  }
+                }
+              }
+            }
+          },
+          "306": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3096,
+                  "msg": "User does not exist",
+                  "data": null
+                }
+              }
+            }
+          },
+          "308": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3008,
+                  "msg": "user already exists..",
+                  "data": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Please Enter valid email ID.",
+                  "data": null
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Invalid request",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/verification/otp": {
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "verification otp page",
+        "description": "Enter code & userId",
+        "requestBody": {
+          "description": "Sample body to be sent for verify otp",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOTP"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns user data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "userId": true
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Invalid request",
+                  "data": null
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Invalid code",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/username/verify/{userName}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "get user by userid",
+        "description": "check userName exists or not",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "path",
+            "description": "check userName exists or not",
+            "required": true,
+            "schema": {
               "type": "string"
+            },
+            "examples": {
+              "userName": {
+                "value": "support_1"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns distinct account data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": null
+                }
+              }
             }
           },
-          "example": {
-            "emailOrUsername": "example@gmail.com",
-            "password": "ABC@123"
-          }
-        },
-        "Signup": {
-          "title": "Signup",
-          "required": [
-            "email"
-          ],
-          "type": "object",
-          "properties": {
-            "email": {
-              "type": "string",
-              "description": "Based on action data will be added"
+          "308": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3008,
+                  "msg": "user already exists..",
+                  "data": null
+                }
+              }
             }
           },
-          "example": {
-            "email": "example@gmail.com"
-          }
-        },
-        "ResendOTP": {
-          "title": "ResendOTP",
-          "required": [
-            "userId"
-          ],
-          "type": "object",
-          "properties": {
-            "userId": {
-              "type": "string",
-              "description": "Based on action data will be added"
-            },
-          "example": {
-            "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
-          }
-        },
-        "ForgetPwd": {
-          "title": "ForgetPwd",
-          "required": [
-            "email"
-          ],
-          "type": "object",
-          "properties": {
-            "email": {
-              "type": "string",
-              "description": "Based on action data will be added"
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
             }
-          },
-          "example": {
-            "email": "example@gmail.com"
           }
-        },
-        "Setusername": {
-          "title": "Set username",
-          "required": [
-            "fullName",
-            "password",
-            "userName",
-            "userId"
-          ],
-          "type": "object",
-          "properties": {
-            "fullName": {
-              "type": "string",
-              "description": "Based on action data will be added"
-            },
-            "password": {
-              "type": "string",
-              "description": "Based on action data will be added"
-            },
-            "userName": {
-              "type": "string",
-              "description": "Based on action data will be added"
-            },
-            "userId": {
-              "type": "string",
-              "description": "Based on action data will be added"
-            }
-          },
-          "example": {
-            "fullName": "asd sdafas",
-            "password": "pass@123",
-            "userName": "support_1",
-            "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
-          }
-        },
-        "VerifyOTP": {
-          "title": "Set username",
-          "required": [
-            "userId",
-            "code"
-          ],
-          "type": "object",
-          "properties": {
-            "userId": {
-              "type": "string",
-              "description": "Based on action data will be added"
-            },
-            "code": {
-              "type": "number",
-              "description": "Based on action data will be added"
-            }
-          },
-          "example": {
-            "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2",
-            "code": 731609
-          }
-        },
-        "ApiResponse": {
-          "title": "Standard response format of api-web-app  user api response",
-          "type": "object",
-          "properties": {
-            "code": {
-              "type": "number"
-            },
-            "msg": {
+        }
+      }
+    },
+    "/users/email/verify/{email}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "get user by userid",
+        "description": "check email exists or not",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "check email exists or not",
+            "required": true,
+            "schema": {
               "type": "string"
             },
-            "data": {
-              "type": "object"
+            "examples": {
+              "userName": {
+                "value": "example@gmail.com"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns distinct account data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": null
+                }
+              }
+            }
+          },
+          "308": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3008,
+                  "msg": "user already exists..",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/photo": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "update User photo",
+        "description": "update User photo",
+        "security": [
+          {
+            "HeaderAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "profilePic": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns smpp short message csv (download)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "name": true,
+                    "data": "t"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "File size or pixel is less than expected",
+                  "data": null,
+                  "err": true
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Please provide a file",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
             }
           }
         }
       }
     }
+  },
+  "components": {
+    "securitySchemes": {
+      "HeaderAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    },
+    "schemas": {
+      "Login": {
+        "title": "Login",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "example@gmail.com",
+          "password": "ABC@123"
+        }
+      },
+      "Signup": {
+        "title": "Signup",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          }
+        },
+        "example": {
+          "email": "example@gmail.com"
+        }
+      },
+      "ResendOTP": {
+        "title": "ResendOTP",
+        "required": [
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          }
+        },
+        "example": {
+          "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
+        }
+      },
+      "ForgetPwd": {
+        "title": "ForgetPwd",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          }
+        },
+        "example": {
+          "email": "example@gmail.com"
+        }
+      },
+      "Setusername": {
+        "title": "Set username",
+        "required": [
+          "fullName",
+          "password",
+          "userName",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          },
+          "password": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          },
+          "userName": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          },
+          "userId": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          }
+        },
+        "example": {
+          "fullName": "asd sdafas",
+          "password": "pass@123",
+          "userName": "support_1",
+          "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
+        }
+      },
+      "VerifyOTP": {
+        "title": "Set username",
+        "required": [
+          "userId",
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          },
+          "code": {
+            "type": "number",
+            "description": "Based on action data will be added"
+          }
+        },
+        "example": {
+          "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2",
+          "code": 731609
+        }
+      },
+      "ApiResponse": {
+        "title": "Standard response format of api-web-app  user api response",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          }
+        }
+      }
+    }
   }
+}

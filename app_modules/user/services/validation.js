@@ -560,40 +560,41 @@ class validate {
   //   return isvalid.promise
   // }
 
-  // changePassword (request) {
-  //   const isvalid = q.defer()
-  //   const schema = {
-  //     id: '/changePassword',
-  //     type: 'object',
-  //     required: true,
-  //     properties: {
-  //       newPassword: {
-  //         type: 'string',
-  //         required: true,
-  //         minLength: 1
-  //       },
-  //       token: {
-  //         type: 'string',
-  //         required: true,
-  //         minLength: 1
-  //       }
-  //     }
-  //   }
-  //   const formatedError = []
-  //   v.addSchema(schema, '/changePassword')
-  //   const error = _.map(v.validate(request, schema).errors, 'stack')
-  //   _.each(error, function (err) {
-  //     const formatedErr = err.split('.')
-  //     formatedError.push(formatedErr[formatedErr.length - 1])
-  //   })
-  //   if (formatedError.length > 0) {
-  //     isvalid.reject({ type: __constants.RESPONSE_MESSAGES.INVALID_REQUEST, err: formatedError })
-  //   } else {
-  //     trimInput.singleInputTrim(request)
-  //     isvalid.resolve(request)
-  //   }
-  //   return isvalid.promise
-  // }
+  changePassword (request) {
+    const isvalid = q.defer()
+    const schema = {
+      id: '/changePassword',
+      type: 'object',
+      required: true,
+      properties: {
+        newPassword: {
+          type: 'string',
+          required: true,
+          minLength: 1
+        },
+        userId: {
+          type: 'string',
+          required: true,
+          minLength: 1,
+          maxLength: 50
+        }
+      }
+    }
+    const formatedError = []
+    v.addSchema(schema, '/changePassword')
+    const error = _.map(v.validate(request, schema).errors, 'stack')
+    _.each(error, function (err) {
+      const formatedErr = err.split('.')
+      formatedError.push(formatedErr[formatedErr.length - 1])
+    })
+    if (formatedError.length > 0) {
+      isvalid.reject({ type: __constants.RESPONSE_MESSAGES.INVALID_REQUEST, err: formatedError })
+    } else {
+      trimInput.singleInputTrim(request)
+      isvalid.resolve(request)
+    }
+    return isvalid.promise
+  }
 
   // resetPassword (request) {
   //   const isvalid = q.defer()

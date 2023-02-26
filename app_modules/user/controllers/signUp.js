@@ -41,11 +41,11 @@ const controllerSignUp = (req, res) => {
   emailValidator.validate(req.body.email)
     .then(data => {
       __logger.info('controllerSignUp :: signUp function', data)
-      // if (data && data.valid && data.validators && data.validators.mx && data.validators.mx.valid && data.validators.smtp && data.validators.smtp.valid) {
-      return userService.createUser(req.body.email, __constants.PROVIDER_TYPE.email)
-      // } else {
-      //   return __util.send(res, { type: __constants.RESPONSE_MESSAGES.EMAIL_NOT_VALID, data: {}, err: [] })
-      // }
+      if (data && data?.validators?.regex?.valid && data?.validators?.mx?.valid) {
+        return userService.createUser(req.body.email, __constants.PROVIDER_TYPE.email)
+      } else {
+        return __util.send(res, { type: __constants.RESPONSE_MESSAGES.EMAIL_NOT_VALID, data: {}, err: [] })
+      }
     })
     .then(data => {
       userId = data.userId
@@ -54,7 +54,7 @@ const controllerSignUp = (req, res) => {
     .then(data => { return verificationService.sendVerificationCodeByEmail(data.code, req.body.email) })
     .then(data => {
       __logger.info('controllerSignUp :: signUp function :: Then 1', { data })
-      return __util.send(res, { type: __constants.RESPONSE_MESSAGES.EMAIL_VC, data: { userId } })
+      return __util.send(res, { type: __constants.RESPONSE_MESSAGES.EMAIL_VC, data: { userId, isVerified: 0 } })
     })
     .catch(err => {
       __logger.error('controllerSignUp :: signUp function :: error: ', err)
@@ -67,11 +67,11 @@ const resendOtp = (req, res) => {
   const validate = new ValidatonService()
   const verificationService = new VerificationService()
   const userService = new UserService()
-  let userDetails 
+  let userDetails
   validate.checkUserId(req.body)
     .then(data => {
       __logger.info('resendOtp function', data)
-      return userService.getUserDataByEmailAndUserId(req.body.userId)
+      return userService.getUserDataByUserId(req.body.userId)
     })
     .then(data => {
       userDetails = data[0]
@@ -165,8 +165,8 @@ const forgetPwd = (req, res) => {
   emailValidator.validate(req.body.email)
     .then(data => {
       __logger.info('forgetPwd function', data)
-      if (data && data.valid && data.validators && data.validators.mx && data.validators.mx.valid && data.validators.smtp && data.validators.smtp.valid) {
-        return userService.getUserDataByEmailAndUserId(req.body.email)
+      if (data && data?.validators?.regex && data?.validators?.mx?.valid) {
+        return userService.getUserDataByEmail(req.body.email, true)
       } else {
         return __util.send(res, { type: __constants.RESPONSE_MESSAGES.EMAIL_NOT_VALID, data: {} })
       }

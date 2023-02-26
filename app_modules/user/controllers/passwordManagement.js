@@ -1,5 +1,5 @@
 const q = require('q')
-const moment = require('moment')
+// const moment = require('moment')
 const __util = require('../../../lib/util')
 const __constants = require('../../../config/constants')
 const __logger = require('../../../lib/logger')
@@ -89,20 +89,19 @@ const forgetPassword = (req, res) => {
 const changePassword = (req, res) => {
   const userService = new UserService()
   const validate = new ValidatonService()
-  __logger.info('change password called: ', req.body)
+  __logger.info('Inside change password called: ', req.body)
   validate.changePassword(req.body)
-    .then(data => userService.getTokenDetailsFromToken(req.body.token))
     .then(data => {
-      const currentTime = moment().utc().format('YYYY-MM-DD HH:mm:ss')
-      const expireyTime = moment(data.created_on).utc().add(+data.expires_in, 'seconds').format('YYYY-MM-DD HH:mm:ss')
-      __logger.info('datatat ===>', data, expireyTime, currentTime, moment(currentTime).isBefore(expireyTime))
-      if (moment(currentTime).isBefore(expireyTime)) {
-        return userService.updatePassword(data.user_id, req.body.newPassword)
+      __logger.info('changePassword function', data)
+      return userService.getUserDataByUserId(req.body.userId, true)
+    })
+    .then(data => {
+      if (data && data.length > 0) {
+        return userService.updatePwd(req.body.userId, req.body.newPassword, data[0].saltKey)
       } else {
-        return rejectionHandler({ type: __constants.RESPONSE_MESSAGES.INVALID_PASS_TOKEN, err: {} })
+        return rejectionHandler({ type: __constants.RESPONSE_MESSAGES.USER_NOT_EXIST, err: {} })
       }
     })
-    .then(data => userService.setPasswordTokeConsumed(req.body.token, data.userId))
     .then(data => __util.send(res, { type: __constants.RESPONSE_MESSAGES.SUCCESS, data: {} }))
     .catch(err => {
       __logger.error('error: ', err)
@@ -116,7 +115,7 @@ const resetPasssword = (req, res) => {
   const userService = new UserService()
   const validate = new ValidatonService()
   validate.resetPassword(req.body)
-    .then(data => userService.getPasswordByUserId(userId))
+    .then(data => userService.updatePwd(req.body.userId, req.body.newPassword))
     .then(result => {
       __logger.info('result from db---', result)
       const hashPassword = passMgmt.create_hash_of_password(req.body.oldPassword, result.saltKey.toLowerCase())
@@ -128,7 +127,7 @@ const resetPasssword = (req, res) => {
     })
     .then(data => {
       __logger.info('updated password for userId::', data)
-      __util.send(res, { type: __constants.RESPONSE_MESSAGES.SUCCESS, data: {} })
+      return __util.send(res, { type: __constants.RESPONSE_MESSAGES.SUCCESS, data: {} })
     })
     .catch(err => {
       __logger.error('error: ', err)

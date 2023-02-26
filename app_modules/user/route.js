@@ -29,7 +29,7 @@ router.get('/username/verify', require('./controllers/signUp').usernameVerify)
 router.post('/forgetpassword', require('./controllers/signUp').forgetPwd)
 
 // router.post('/auth/forgetpassword', require('./controllers/passwordManagement').forgetPassword)
-router.post('/auth/changepassword', require('./controllers/passwordManagement').changePassword)
+router.patch('/changepassword', require('./controllers/passwordManagement').changePassword)
 router.put('/logo', authMiddleware.authenticate(authstrategy.strategy.jwt.name, authstrategy.strategy.jwt.options), require('./controllers/userDetails').updateProfilePic)
 // router.get('/auth/google', authMiddleware.authenticate(authstrategy.google.name, authstrategy.google.options))
 // router.get('/auth/facebook', authMiddleware.authenticate(authstrategy.facebook.name, authstrategy.google.options))

@@ -10,16 +10,20 @@ const getUserDataByEmailOrUsername = () => {
   where ud.username = ? or lower(u.email) = lower(?) and u.is_active = true and u.is_verified = true and u.is_profile_completed = true`
 }
 
-const getUserDataByEmail = () => {
+const getUserDataByEmail = (forgetKey) => {
+  let value
+  if (forgetKey) value = 'and u.is_verified = true and u.is_profile_completed = true'
   return `select u.user_id as userId, email, salt_key as saltKey, hash_password as hashPassword, signup_type as signupType, u.is_verified as isVerified, u.is_profile_completed as isProfileCompleted
   from users u
-  where lower(u.email) = lower(?) and u.is_active = true `
+  where lower(u.email) = lower(?) ${value} and u.is_active = true;`
 }
 
-const getUserDetailsByUserId = () => {
+const getUserDetailsByUserId = (changePwd) => {
+  let value
+  if (changePwd) value = 'and u.is_verified = true and u.is_profile_completed = true'
   return `select u.user_id as userId, email, salt_key as saltKey, hash_password as hashPassword, signup_type as signupType
   from users u
-  where u.user_id = ? and u.is_active = true`
+  where u.user_id = ?  ${value} and u.is_active = true`
 }
 const createUser = () => {
   return `insert into users ( email, user_id,created_by,created_on, signup_type, is_active) values 
@@ -32,13 +36,13 @@ const getUserDetailsByUsername = () => {
 }
 
 const setUserdetails = () => {
-  return `insert into user_details (user_detail_id, username, full_name, plan_id, created_on, created_by, is_profile_completed, is_active) values
-  (?,?,?,?,now(),?, true, true)`
+  return `insert into user_details (user_detail_id, username, full_name, plan_id, created_on, created_by, is_active) values
+  (?,?,?,?,now(),?, true)`
 }
 
 const setUserPwd = () => {
   return `update users 
-  set hash_password =? , salt_key=?, updated_on = now(), updated_by = ? 
+  set hash_password =? , salt_key=?, updated_on = now(), updated_by = ?, is_profile_completed = 1
   where user_id = ? and is_active = true`
 }
 
@@ -50,8 +54,14 @@ const updatePhotoUrl = () => {
 
 const updateotpVerifed = () => {
   return `update users 
-  set is_verified = true, is_profile_completed = ?, updated_on = now(), updated_by = ? 
+  set is_verified = true, is_profile_completed = ?, updated_on = now(), updated_by = ?
   where user_id = ? and is_active = true`
+}
+
+const updatePwd = () => {
+  return `update users
+  set hash_password = ?, updated_on = now(), updated_by = ?
+  where user_id = ? and is_verified = true and is_profile_completed = true and is_active = true `
 }
 // // Account Profile Queries
 // const getUserDetailsByUserIdForAccountProfile = () => {
@@ -494,7 +504,8 @@ module.exports = {
   updatePhotoUrl,
   getUserDetailsByUserId,
   getUserDataByEmail,
-  updateotpVerifed
+  updateotpVerifed,
+  updatePwd
   // getUserDetailsByUserIdForAccountProfile,
   // getUserAccountProfile,
   // updateUserAccountProfile,

@@ -31,10 +31,10 @@ class UserData {
     return userDetails.promise
   }
 
-  getUserDataByEmail (email) {
+  getUserDataByEmail (email, forgetKey) {
     __logger.info('dbData: getUserDataByEmail(): ', email)
     const userDetails = q.defer()
-    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDataByEmail(), [email])
+    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDataByEmail(forgetKey), [email])
       .then(result => {
         __logger.info('dbData: getUserDataByEmail(): then 1:', result)
         userDetails.resolve(result)
@@ -46,12 +46,12 @@ class UserData {
     return userDetails.promise
   }
 
-  getUserDataByEmailAndUserId ( userId) {
-    __logger.info('dbData: getUserDataByEmailAndUserId(): ', userId)
+  getUserDataByUserId (userId, flag = false) {
+    __logger.info('dbData: getUserDataByUserId(): ', userId)
     const userDetails = q.defer()
-    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDetailsByUserId(), [userId])
+    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.getUserDetailsByUserId(flag), [userId])
       .then(result => {
-        __logger.info('dbData: getUserDataByEmailAndUserId(): then 1:', result)
+        __logger.info('dbData: getUserDataByUserId(): then 1:', result)
         userDetails.resolve(result)
       })
       .catch(err => {
@@ -71,7 +71,7 @@ class UserData {
         if (exists && exists.length === 0) {
           userId = this.uniqueId.uuid()
           return __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.createUser(), [email, userId, userId, signupType])
-        } else if (exists?.[0]?.isProfileCompleted !== true) {
+        } else if (!exists?.[0]?.isProfileCompleted) {
           return exists
         } else {
           userCreated.reject({ type: __constants.RESPONSE_MESSAGES.USER_EXIST, data: {} })
@@ -81,9 +81,9 @@ class UserData {
         __logger.info('dbData: createUser(): exists: then 3:', result)
         if (result && result.affectedRows && result.affectedRows > 0) {
           userCreated.resolve({ userId })
-        } else if (result?.[0]?.isVerified !== true) {
+        } else if (!result?.[0]?.isVerified) {
           userCreated.resolve({ userId: result[0].userId})
-        } else if (result?.[0]?.isVerified === true) {
+        } else if (result?.[0]?.isVerified) {
           userCreated.reject({ type: __constants.RESPONSE_MESSAGES.SUCCESS, data: { userId: result[0].userId, isVerified: result[0].isVerified } })
         } else {
           userCreated.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, data: {} })
@@ -222,7 +222,27 @@ class UserData {
         }
       })
       .catch(err => {
-        __logger.error('updateotpVerifed :: dbData: error in Update photo function: ', err)
+        __logger.error('updateotpVerifed :: dbData: error in Update otp verified function: ', err)
+        otpVerified.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err })
+      })
+    return otpVerified.promise
+  }
+
+  updatePwd (userId, newPwd, saltKey) {
+    __logger.info('updatePwd:')
+    const otpVerified = q.defer()
+    const hashPassword = passMgmt.create_hash_of_password(newPwd, saltKey).passwordHash
+    __db.mysql.query(__constants.HW_MYSQL_NAME, queryProvider.updatePwd(), [hashPassword, userId, userId])
+      .then(result => {
+        __logger.info('dbData: updatePwd(): then 1:', result)
+        if (result && result.affectedRows === 1) {
+          otpVerified.resolve(result)
+        } else {
+          otpVerified.reject({ type: __constants.RESPONSE_MESSAGES.USER_NOT_EXIST, data: {} })
+        }
+      })
+      .catch(err => {
+        __logger.error('updatePwd :: dbData: error in Update photo function: ', err)
         otpVerified.reject({ type: __constants.RESPONSE_MESSAGES.SERVER_ERROR, err: err })
       })
     return otpVerified.promise

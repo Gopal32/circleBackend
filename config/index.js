@@ -313,7 +313,8 @@ module.exports = {
   swaggerUrl: {
     platform: process.env.BASE_URL ? process.env.BASE_URL + '/' + __constants.APP_NAME + '/api' : 'http://localhost:' + process.env.PORT + '/' + __constants.APP_NAME + '/api'
   },
-  photoUrl: process.env.PHOTO_URL
+  photoUrl: process.env.PHOTO_URL,
+  categoryUrl: process.env.CATEGORY_URL
 //   webHookUrl: process.env.WEB_HOOK_URL,
 //   heloOssUrl: process.env.HELO_OSS_URL,
 //   clusterNumber: process.env.CLUSTER_NUMBER,

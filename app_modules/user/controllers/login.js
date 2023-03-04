@@ -1,4 +1,4 @@
-const ValidatonService = require('../services/validation')
+const ValidationService = require('../services/validation')
 const __util = require('../../../lib/util')
 const passMgmt = require('../../../lib/util/password_mgmt')
 const __constants = require('../../../config/constants')
@@ -29,7 +29,7 @@ const UserService = require('../services/dbData')
 
 const controller = (req, res) => {
   __logger.info('Inside login')
-  const validate = new ValidatonService()
+  const validate = new ValidationService()
   const userService = new UserService()
   validate.login(req.body)
     .then(data => {

@@ -41,7 +41,10 @@ const CUSTOM_CONSTANT = {
 }
 
 const SUBSCRIPTION = {
-  free_plan: '3e1ae2fb-454b-4bb4-a9dd-dcdef2a40d73'
+  free_plan: '3e1ae2fb-454b-4bb4-a9dd-dcdef2a40d73',
+  basic: 'f717a43a-826c-48a2-9a60-649c298cef09',
+  silver: 'c43bf5aa-00ac-4f8b-b254-af89db812201',
+  gold: '23819692-a71a-4b41-b7e9-06d07392907d'
 }
 
 const VERIFICATION_CHANNEL = {
@@ -266,9 +269,10 @@ const SERVER_TIMEOUT = 2 * 60 * 1000
 //   MESSAGE_STATUS.rejected
 // ]
 const VALIDATOR = {
-  fullName: '^[a-z]*( [a-z]*)+$'
+  fullName: '^[a-z]*( [a-z]*)+$',
   // email: '^(([^<>()\\[\\]\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$',
-  // password: '^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\\d]){2,})(?=(.*[\\W]){1,})(?!.*\\s).{8,}$',
+  password: '^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$',
+  username: '^[A-Za-z][A-Za-z0-9@#$&_-]{7,29}$'
   // text: '^[a-zA-Z]+$',
   // textWithSpace: '^[a-zA-Z\t\\s]*$',
   // number: '^[0-9]+$',
@@ -713,7 +717,10 @@ const FILE_MAX_UPLOAD_IN_BYTE = 5000000
 // const STATIC_TEMPLATE_FOR_INTERNAL_USED_FOLDER = 'static_internal_template'
 // const STATIC_TEMPLATE_ID = '2c1b8abb_04ed_47b7_baad_4607660d8806'
 // const MAX_WEBISTE_ALWD = 2
-const EMAIL_OTP_KEY = 'OTP_'
+const REDIS_KEY = {
+  EMAIL_OTP_KEY: 'OTP_',
+  USER_DETAILS: 'USER_DETAILS_'
+}
 const PROVIDER_TYPE = {
   email: 'email'
 }
@@ -859,6 +866,6 @@ module.exports.FILE_MAX_UPLOAD_IN_BYTE = FILE_MAX_UPLOAD_IN_BYTE
 // module.exports.STATIC_TEMPLATE_FOR_INTERNAL_USED_FOLDER = STATIC_TEMPLATE_FOR_INTERNAL_USED_FOLDER
 // module.exports.FB_REDIS_KEY_STATIC_TEMPLATE_SET_TIME = FB_REDIS_KEY_STATIC_TEMPLATE_SET_TIME
 // module.exports.STATIC_TEMPLATE_ID = STATIC_TEMPLATE_ID
-module.exports.EMAIL_OTP_KEY = EMAIL_OTP_KEY
+module.exports.REDIS_KEY = REDIS_KEY
 module.exports.PROVIDER_TYPE = PROVIDER_TYPE
 module.exports.SUBSCRIPTION = SUBSCRIPTION

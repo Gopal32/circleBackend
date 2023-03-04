@@ -117,11 +117,11 @@ module.exports = {
   //   message: 'Business phone number verified'
   // },
   // // Note: use codes 3000 to 3999 for api error
-  // NO_RECORDS_FOUND: {
-  //   status_code: 200,
-  //   code: 3000,
-  //   message: 'No record found.'
-  // },
+  NO_RECORDS_FOUND: {
+    status_code: 200,
+    code: 3000,
+    message: 'No record found.'
+  },
   INVALID_CODE: {
     status_code: 200,
     code: 3002,
@@ -502,11 +502,16 @@ module.exports = {
   //   code: 3062,
   //   message: 'Thank you for providing feedback.'
   // },
-  // NO_RECORDS_FOUND_FOR_CATEGORY: {
-  //   status_code: 200,
-  //   code: 3063,
-  //   message: 'No such category found'
-  // },
+  CATEGORY_EXISTS: {
+    status_code: 200,
+    code: 3008,
+    message: 'category already exists.'
+  },
+  NO_RECORDS_FOUND_FOR_CATEGORY: {
+    status_code: 200,
+    code: 3063,
+    message: 'No such category found'
+  },
   // AGREEMENT_STATUS_CANNOT_BE_UPDATED: {
   //   status_code: 200,
   //   code: 3064,

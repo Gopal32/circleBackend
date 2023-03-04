@@ -17,6 +17,18 @@
     {
       "name": "User",
       "description": "APIs Manage User"
+    },
+    {
+      "name": "Category",
+      "description": "APIs Manage Category"
+    },
+    {
+      "name": "Plan",
+      "description": "APIs Manage Plan"
+    },
+    {
+      "name": "Mapping",
+      "description": "APIs Manage Mapping"
     }
   ],
   "paths": {
@@ -40,7 +52,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns user data",
+            "description": "Returns user Id and token",
             "content": {
               "application/json": {
                 "schema": {
@@ -140,7 +152,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns user data",
+            "description": "Returns user ID",
             "content": {
               "application/json": {
                 "schema": {
@@ -150,8 +162,7 @@
                   "code": 2000,
                   "msg": "Please check your registered email for verification code",
                   "data": {
-                    "userId": true,
-                    "isVerified": 1
+                    "userId": true
                   }
                 }
               }
@@ -240,7 +251,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns user data",
+            "description": "Returns userId",
             "content": {
               "application/json": {
                 "schema": {
@@ -252,21 +263,6 @@
                   "data": {
                     "userId": true
                   }
-                }
-              }
-            }
-          },
-          "308": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiResponse"
-                },
-                "example": {
-                  "code": 3096,
-                  "msg": "User does not exist",
-                  "data": null
                 }
               }
             }
@@ -339,7 +335,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns user data",
+            "description": "Returns user Id",
             "content": {
               "application/json": {
                 "schema": {
@@ -364,7 +360,7 @@
                 },
                 "example": {
                   "code": 3008,
-                  "msg": "user does not exist",
+                  "msg": "user already exists..",
                   "data": null
                 }
               }
@@ -423,7 +419,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns user data",
+            "description": "Returns token",
             "content": {
               "application/json": {
                 "schema": {
@@ -537,7 +533,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns user data",
+            "description": "Returns userId",
             "content": {
               "application/json": {
                 "schema": {
@@ -626,7 +622,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returns distinct account data",
+            "description": "Returns succecc message",
             "content": {
               "application/json": {
                 "schema": {
@@ -698,7 +694,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returns distinct account data",
+            "description": "Returns Success message",
             "content": {
               "application/json": {
                 "schema": {
@@ -774,7 +770,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns smpp short message csv (download)",
+            "description": "Returns Success message",
             "content": {
               "application/json": {
                 "schema": {
@@ -784,8 +780,7 @@
                   "code": 2000,
                   "msg": "Success",
                   "data": {
-                    "name": true,
-                    "data": "t"
+                    "data": null
                   }
                 }
               }
@@ -818,6 +813,729 @@
                   "code": 4000,
                   "msg": "Please provide a file",
                   "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/generate/username": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "generate unique username",
+        "description": "generate unique username",
+        "requestBody": {
+          "description": "Sample body to be generate unique username",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateUsername"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns username",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "username": true
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "File size or pixel is less than expected",
+                  "data": null,
+                  "err": true
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Please provide a file",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/generate/changepassword": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "change password",
+        "description": "change password",
+        "requestBody": {
+          "description": "Sample body to be change password",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Changepassword"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns smpp short message csv (download)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "data": null
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "File size or pixel is less than expected",
+                  "data": null,
+                  "err": true
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Please provide a file",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/category": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "get category list for user",
+        "description": "get category list for user",
+        "responses": {
+          "200": {
+            "description": "Returns category list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "data": {
+                      "categoryId": "u92821eb-ea03-476d-9652-d5b88b3c50f8",
+                      "categoryName": "sports",
+                      "categoryDescription": "text",
+                      "categoryImage": "/location",
+                      "postCount": "1K",
+                      "followersCount": "1M"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "300": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3000,
+                  "msg": "No record found",
+                  "data": null,
+                  "err": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/category/admin": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "get category list for user",
+        "description": "get category list for user",
+        "responses": {
+          "200": {
+            "description": "Returns category list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "data": {
+                      "categoryId": "u92821eb-ea03-476d-9652-d5b88b3c50f8",
+                      "categoryName": "sports",
+                      "categoryDescription": "text",
+                      "categoryImage": "/location",
+                      "postCount": "1K",
+                      "followersCount": "1M"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/plan": {
+      "get": {
+        "tags": [
+          "Plan"
+        ],
+        "summary": "plan list details",
+        "description": "get plan list details",
+        "security": [
+          {
+            "HeaderAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns get list of plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "data": {
+                      "planId": "u92821eb-ea03-476d-9652-d5b88b3c50f8",
+                      "seeVoice": 1,
+                      "seeUpdateProfile": 1,
+                      "addVoice": 0,
+                      "seeNews": 1,
+                      "seeEvent": 0,
+                      "addNews": 0,
+                      "addEvent": 0,
+                      "seeAchievement": 0,
+                      "seeDetails": 1,
+                      "spendAchievement": 0,
+                      "applyCelebrity": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/plan/": {
+      "post": {
+        "tags": [
+          "Plan"
+        ],
+        "summary": "select plan details",
+        "description": "select plan details",
+        "security": [
+          {
+            "HeaderAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Sample body to be select plan details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectPlan"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns get list of plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "data": {
+                      "categoryId": "u92821eb-ea03-476d-9652-d5b88b3c50f8",
+                      "categoryName": "sports",
+                      "categoryDescription": "text",
+                      "categoryImage": "/location",
+                      "postCount": "1K",
+                      "followersCount": "1M"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mapped/addcategory": {
+      "patch": {
+        "tags": [
+          "Mapping"
+        ],
+        "summary": "mapped category with user",
+        "description": "mapped category with user",
+        "security": [
+          {
+            "HeaderAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Sample body to be mapped category with user",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MappedCategory"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns get list of plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "data": null
+                  }
+                }
+              }
+            }
+          },
+          "363": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3063,
+                  "msg": "No such category found.",
+                  "data": null,
+                  "err": null
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Inavlid Request",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mapped/userfollow/{followingId}'": {
+      "put": {
+        "tags": [
+          "Mapping"
+        ],
+        "summary": "mapped follow the user",
+        "description": "mapped follow the user",
+        "security": [
+          {
+            "HeaderAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "followingId",
+            "in": "path",
+            "description": "user id to follow",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "followingId": {
+                "value": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns get list of plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "data": null
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Inavlid Request",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mapped/userunfollow/{followingId}'": {
+      "put": {
+        "tags": [
+          "Mapping"
+        ],
+        "summary": "mapped unfollow the user",
+        "description": "mapped unfollow the user",
+        "security": [
+          {
+            "HeaderAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "followingId",
+            "in": "path",
+            "description": "user id to unfollow",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "followingId": {
+                "value": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns get list of plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "data": null
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 4000,
+                  "msg": "Inavlid Request",
+                  "data": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 5000,
+                  "msg": "Something went wrong. Please try again later.",
+                  "err": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/special/user": {
+      "put": {
+        "tags": [
+          "Mapping"
+        ],
+        "summary": "mapped unfollow the user",
+        "description": "mapped unfollow the user",
+        "security": [
+          {
+            "HeaderAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns get list of plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 2000,
+                  "msg": "Success",
+                  "data": {
+                    "data": null
+                  }
+                }
+              }
+            }
+          },
+          "300": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3000,
+                  "msg": "No record found",
+                  "data": null,
+                  "err": null
                 }
               }
             }
@@ -890,17 +1608,23 @@
       "ResendOTP": {
         "title": "ResendOTP",
         "required": [
-          "userId"
+          "userId",
+          "email"
         ],
         "type": "object",
         "properties": {
           "userId": {
             "type": "string",
             "description": "Based on action data will be added"
+          },
+          "email": {
+            "type": "string",
+            "description": "Based on action data will be added"
           }
         },
         "example": {
-          "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
+          "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2",
+          "email": "example@gmail.com"
         }
       },
       "ForgetPwd": {
@@ -925,7 +1649,9 @@
           "fullName",
           "password",
           "userName",
-          "userId"
+          "userId",
+          "signupType",
+          "subscriptionId"
         ],
         "type": "object",
         "properties": {
@@ -944,13 +1670,23 @@
           "userId": {
             "type": "string",
             "description": "Based on action data will be added"
+          },
+          "signupType": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          },
+          "subscriptionId": {
+            "type": "string",
+            "description": "Based on action data will be added"
           }
         },
         "example": {
           "fullName": "asd sdafas",
           "password": "pass@123",
           "userName": "support_1",
-          "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
+          "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2",
+          "signupType": "email",
+          "subscriptionId": "free_plan"
         }
       },
       "VerifyOTP": {
@@ -975,8 +1711,79 @@
           "code": 731609
         }
       },
+      "GenerateUsername": {
+        "title": "Generate Username",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          }
+        },
+        "example": {
+          "email": "example@gmail.com"
+        }
+      },
+      "Changepassword": {
+        "title": "change password",
+        "required": [
+          "newPassword",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "newPassword": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          },
+          "userId": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          }
+        },
+        "example": {
+          "newPassword": "example@gmail.com",
+          "userId": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
+        }
+      },
+      "MappedCategory": {
+        "title": "Mapped Category",
+        "required": [
+          "categoryId"
+        ],
+        "type": "object",
+        "properties": {
+          "categoryId": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Based on action data will be added"
+            }
+          }
+        },
+        "example": "c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2,c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"
+      },
+      "SelectPlan": {
+        "title": "Select Plan",
+        "required": [
+          "planName"
+        ],
+        "type": "object",
+        "properties": {
+          "planName": {
+            "type": "string",
+            "description": "Based on action data will be added"
+          }
+        },
+        "example": {
+          "planName": "basic"
+        }
+      },
       "ApiResponse": {
-        "title": "Standard response format of api-web-app  user api response",
+        "title": "Standard response format of demo  user api response",
         "type": "object",
         "properties": {
           "code": {

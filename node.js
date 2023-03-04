@@ -1,4 +1,4 @@
-const emailValidator = require('deep-email-validator')
+// const emailValidator = require('deep-email-validator')
 
 // function isEmailValid (email) {
 //   return emailValidator.validate(email)

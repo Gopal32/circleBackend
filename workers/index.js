@@ -25,7 +25,7 @@ class IndexWorker {
       __logger.info(result)
       vm.runExpressServer()
     }).catch((err) => {
-      console.log('----------------------', err)
+      console.log('--------------', err)
       __logger.error('index: startServer(): ', err)
       process.exit(1)
     })
@@ -113,6 +113,7 @@ class IndexWorker {
     process.on('SIGINT', stopGraceFully)
     process.on('SIGTERM', stopGraceFully)
     process.on('uncaughtException', (err) => {
+      console.log('------------------', err)
       __logger.info(' ##### SERVER CRASH ##### \n', err, '\n ########## END ##########')
     })
   }

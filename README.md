@@ -66,11 +66,6 @@ HW_MYSQL_OPTIONS_USER = root
 HW_MYSQL_OPTIONS_PASSWORD = Gopal@0987
 HW_MYSQL_OPTIONS_DATABASE = test
 HW_MYSQL_OPTIONS_PORT = 3306
-MONGO_INIT = true
-MONGO_OPTIONS_DB_NAME = helo_whatsapp
-MONGO_OPTIONS_AUTH_SOURCE = admin
-MONGO_OPTIONS_USER = ''
-MONGO_OPTIONS_PASS = ''
-MONGO_HOST=localhost:27017
-PHOTO_URL= /home/gopal/Android/demo/public/image/
+PHOTO_URL = /home/gopal/Android/demo/public/image/
+CATEGORY_URL = /home/gopal/Android/demo/public/category/
 ```

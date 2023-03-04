@@ -2,6 +2,9 @@ const dateUtil = require('date-format-utils')
 const __config = require('../config')
 const __logger = require('../lib/logger')
 const user = require('../app_modules/user/route')
+const category = require('../app_modules/category/route')
+const mapped = require('../app_modules/userMapped/route')
+const plan = require('../app_modules/plan/route')
 // const headerManipulator = require('../middlewares/headerManipulator')
 
 module.exports = function (app) {
@@ -25,6 +28,9 @@ module.exports = function (app) {
   // region api routes
   const apiUrlPrefix = '/' + __config.api_prefix + '/api'
   app.use(apiUrlPrefix + '/users', user)
+  app.use(apiUrlPrefix + '/category', category)
+  app.use(apiUrlPrefix + '/mapped', mapped)
+  app.use(apiUrlPrefix + '/plan', plan)
   require('../lib/swagger')(app, '/' + __config.api_prefix + '/api')
   // endregion
 }

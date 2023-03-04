@@ -54,7 +54,6 @@ class validate {
     }
     return isvalid.promise
   }
-
 }
 
 module.exports = validate

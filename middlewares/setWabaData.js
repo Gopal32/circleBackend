@@ -1,8 +1,8 @@
-const HttpService = require('../lib/http_service')
-const __config = require('../config')
-const __constants = require('../config/constants')
-const __util = require('../lib/util')
-const __logger = require('../lib/logger')
+// const HttpService = require('../lib/http_service')
+// const __config = require('../config')
+// const __constants = require('../config/constants')
+// const __util = require('../lib/util')
+// const __logger = require('../lib/logger')
 
 module.exports = (req, res, next) => {
   console.log('------req.user------------', req.user)

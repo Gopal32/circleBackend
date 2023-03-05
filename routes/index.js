@@ -5,11 +5,9 @@ const user = require('../app_modules/user/route')
 const category = require('../app_modules/category/route')
 const mapped = require('../app_modules/userMapped/route')
 const plan = require('../app_modules/plan/route')
-// const headerManipulator = require('../middlewares/headerManipulator')
 
 module.exports = function (app) {
   // region all api
-  // app.use(headerManipulator)
   app.all('*', function (request, response, next) {
     const uuid = request.id
     request.req_ip = (request.headers['x-forwarded-for'] ? request.headers['x-forwarded-for'].split(',').shift().trim() : request.ip)

@@ -2,12 +2,8 @@ const q = require('q')
 const __db = require('../../../lib/db')
 const queryProvider = require('../queryProvider')
 const __constants = require('../../../config/constants')
-// const ValidatonService = require('./validation')
-// const rejectionHandler = require('../../../lib/util/rejectionHandler')
 const UniqueId = require('../../../lib/util/uniqueIdGenerator')
 const __logger = require('../../../lib/logger')
-// const _ = require('lodash')
-// const AgreementStatusEngine = require('../services/status')
 
 class MappedData {
   constructor () {

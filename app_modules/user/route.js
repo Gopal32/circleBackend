@@ -19,19 +19,19 @@ const authstrategy = require('../../config').authentication
 
 // Routes
 // User routes
-router.post('/auth/login', require('./controllers/login'))
-router.post('/signup', require('./controllers/signUp'))
-router.post('/resend/otp', require('./controllers/resendOtp'))
-router.patch('/setusername', require('./controllers/setUsername'))
-router.post('/verification/otp', require('./controllers/verification'))
-router.get('/email/verify', require('./controllers/emailVerify'))
-router.get('/username/verify', require('./controllers/usernameVerify'))
+router.post('/login', require('./controllers/login'))
+router.post('/signUp', require('./controllers/signUp'))
+router.post('/resendOtp', require('./controllers/resendOtp'))
+router.patch('/updateProfile', require('./controllers/setUsername'))
+router.post('/verifyOtp', require('./controllers/verification'))
+router.get('/verifyEmail', require('./controllers/emailVerify'))
+router.get('/verifyUserName', require('./controllers/usernameVerify'))
 router.post('/forgetpassword', require('./controllers/forgetPwd'))
-router.post('/generate/username', require('./controllers/generateUsername.js'))
+router.post('/generateUserName', require('./controllers/generateUsername.js'))
 
 // router.post('/auth/forgetpassword', require('./controllers/passwordManagement').forgetPassword)
 router.patch('/changepassword', require('./controllers/changePassword'))
-router.put('/photo', authMiddleware.authenticate(authstrategy.strategy.jwt.name, authstrategy.strategy.jwt.options), require('./controllers/userDetails'))
+router.put('/updateProfilePic', authMiddleware.authenticate(authstrategy.strategy.jwt.name, authstrategy.strategy.jwt.options), require('./controllers/userDetails'))
 // router.get('/auth/google', authMiddleware.authenticate(authstrategy.google.name, authstrategy.google.options))
 // router.get('/auth/facebook', authMiddleware.authenticate(authstrategy.facebook.name, authstrategy.google.options))
 // router.post('/authorize', bearerTokenAuth, require('./controllers/authorize').authorize)

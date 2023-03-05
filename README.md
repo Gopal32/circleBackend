@@ -63,9 +63,9 @@ HW_MYSQL_IS_SLAVE = false
 HW_MYSQL_OPTIONS_CONNECTION_LIMIT = 20
 HW_MYSQL_OPTIONS_HOST = localhost
 HW_MYSQL_OPTIONS_USER = root
-HW_MYSQL_OPTIONS_PASSWORD = Gopal@0987
+HW_MYSQL_OPTIONS_PASSWORD = ********
 HW_MYSQL_OPTIONS_DATABASE = test
 HW_MYSQL_OPTIONS_PORT = 3306
-PHOTO_URL = /home/gopal/Android/demo/public/image/
-CATEGORY_URL = /home/gopal/Android/demo/public/category/
+PHOTO_URL = /demo/public/image/
+CATEGORY_URL = /demo/public/category/
 ```

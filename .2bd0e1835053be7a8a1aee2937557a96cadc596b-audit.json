@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "/home/gopal/Android/demo/.2bd0e1835053be7a8a1aee2937557a96cadc596b-audit.json",
+    "files": [
+        {
+            "date": 1678347359394,
+            "name": "/home/gopal/Android/demo/demo-2023-03-09",
+            "hash": "2e01ef539c9455eb47ea5814406ee4ac"
+        }
+    ]
+}

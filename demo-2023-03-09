@@ -1,0 +1,1052 @@
+2023-03-09 13:05:57 - info:  databases constructor called.
+2023-03-09 13:05:57 - info:  redis_lib.constructor called.
+2023-03-09 13:05:58 - info:  mysqlLib.constructor called.
+2023-03-09 13:05:59 - info:  3/9/2023, 1:05:59 PM   >> Worker PID: 217664
+2023-03-09 13:05:59 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 13:05:59 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 13:06:00 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 13:06:00 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 13:06:00 - info:  connections open.
+2023-03-09 13:06:03 - info:  Initializing swagger doc Routes Completed
+2023-03-09 13:06:03 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 13:17:09 - info:  routes.index: f9434886-2ed7-4962-95f9-28ec4aeab632=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 13:17:09.490"}
+2023-03-09 13:17:09 - info:  inside getUserBasedNews :: 
+2023-03-09 13:17:09 - info:  dbData: checkPlan(): 
+2023-03-09 13:17:09 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 13:17:09 - info:  getUserBasedNews function {"planId":"3e1ae2fb-454b-4bb4-a9dd-dcdef2a40d73","planName":"free_trial","seeVoice":0,"seeUpdateProfile":0,"addVoice":0,"seeNews":0,"seeEvent":0,"addNews":1,"addEvent":0,"seeAchievement":0,"seeDetails":0,"spendAchievement":0,"applyCelebrity":0}
+2023-03-09 13:17:09 - error:  getUserBasedNews function :: error:  {"type":{"status_code":401,"code":4001,"message":"Plan does not have access"},"data":{}}
+2023-03-09 13:17:09 - info:  routes.index: f9434886-2ed7-4962-95f9-28ec4aeab632=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 13:17:09.490","res_t":"2023-03-09 13:17:09.520","res_in":"0.03sec"}
+2023-03-09 13:18:09 - info:  routes.index: b4b13c4e-7794-4b40-b5d6-c961516758d8=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 13:18:09.786"}
+2023-03-09 13:18:09 - info:  inside getUserBasedNews :: 
+2023-03-09 13:18:09 - info:  dbData: checkPlan(): 
+2023-03-09 13:18:09 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 13:18:09 - info:  getUserBasedNews function {"planId":"3e1ae2fb-454b-4bb4-a9dd-dcdef2a40d73","planName":"free_trial","seeVoice":0,"seeUpdateProfile":0,"addVoice":0,"seeNews":0,"seeEvent":0,"addNews":1,"addEvent":0,"seeAchievement":0,"seeDetails":0,"spendAchievement":0,"applyCelebrity":0}
+2023-03-09 13:18:09 - error:  getUserBasedNews function :: error:  {"type":{"status_code":401,"code":4001,"message":"Plan does not have access"},"data":{}}
+2023-03-09 13:18:09 - info:  routes.index: b4b13c4e-7794-4b40-b5d6-c961516758d8=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 13:18:09.786","res_t":"2023-03-09 13:18:09.801","res_in":"0.015sec"}
+2023-03-09 13:18:58 - info:  routes.index: 8f098413-baa8-4b0c-a479-1bed6c1d6582=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 13:18:58.688"}
+2023-03-09 13:18:58 - info:  getUserDetails:
+2023-03-09 13:18:58 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"select username, full_name as fullName, photo_url "}
+2023-03-09 13:18:58 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 13:18:58 - info:  dbData: getUserDetails(): then 1: [{"username":"support_1","fullName":null,"photoUrl":null,"categoryId":["u92821eb-ea03-476d-9652-d5b88b3c50f8,9a268f89-2a3f-4353-a363-499b6c6e09c3"],"planId":"f717a43a-826c-48a2-9a60-649c298cef09","followingUserCount":"0","description":null,"userStatus":null,"freeTrial":1,"createdOn":"2023-02-23T11:34:32.000Z"}]
+2023-03-09 13:18:58 - info:  inside getUserBasedNews :: 
+2023-03-09 13:18:58 - info:  dbData: checkPlan(): 
+2023-03-09 13:18:58 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 13:18:58 - info:  dbData: setRedisPlanKey(): 
+2023-03-09 13:18:58 - info:  dbData: getPlanListById(): 
+2023-03-09 13:18:58 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  select plan_id as planId, plan_name as planName"}
+2023-03-09 13:18:58 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 13:18:58 - info:  dbData: getPlanListById(): then 1: [{"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}]
+2023-03-09 13:18:58 - info:  getUserBasedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 13:18:58 - info:  dbData: checkUsersNews(): 
+2023-03-09 13:18:58 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 13:18:58 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 13:18:58 - info:  dbData: checkUsersNews(): then 1: []
+2023-03-09 13:18:58 - error:  getUserBasedNews function :: error:  {"type":{"status_code":200,"code":3000,"message":"No record found."},"data":{}}
+2023-03-09 13:18:58 - info:  routes.index: 8f098413-baa8-4b0c-a479-1bed6c1d6582=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 13:18:58.688","res_t":"2023-03-09 13:18:58.724","res_in":"0.036sec"}
+2023-03-09 13:19:03 - warn:  redisLib.close, function called {"port":"6379","host":"localhost"}
+2023-03-09 13:19:03 - warn:  mysqlLib.close, connection close {"host":"localhost","conn_name":"test"}
+2023-03-09 13:19:03 - info:  success connection closed.
+2023-03-09 13:19:03 - warn:  redisLib.close, function called {"port":"6379","host":"localhost"}
+2023-03-09 13:19:03 - warn:  mysqlLib.close, connection close {"host":"localhost","conn_name":"test"}
+2023-03-09 13:19:03 - info:  success connection closed.
+2023-03-09 13:19:03 - warn:  redisLib.close, function called {"port":"6379","host":"localhost"}
+2023-03-09 14:15:29 - info:  databases constructor called.
+2023-03-09 14:15:29 - info:  redis_lib.constructor called.
+2023-03-09 14:15:30 - info:  mysqlLib.constructor called.
+2023-03-09 14:15:30 - info:  3/9/2023, 2:15:30 PM   >> Worker PID: 290326
+2023-03-09 14:15:30 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 14:15:30 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 14:15:31 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:15:31 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:15:31 - info:  connections open.
+2023-03-09 14:15:31 - info:  Initializing swagger doc Routes Completed
+2023-03-09 14:15:31 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 14:15:44 - info:  routes.index: a7afc3a0-73c0-4f54-9b2b-ce4c6c47a824=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 14:15:44.401"}
+2023-03-09 14:15:44 - info:  inside getUserBasedNews :: 
+2023-03-09 14:15:44 - info:  dbData: checkPlan(): 
+2023-03-09 14:15:44 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:15:44 - info:  getUserBasedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:15:44 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:15:44 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:15:44 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:15:44 - info:  dbData: checkUsersNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:15:44 - info:  getUserBasedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:15:44 - info:  routes.index: a7afc3a0-73c0-4f54-9b2b-ce4c6c47a824=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 14:15:44.401","res_t":"2023-03-09 14:15:44.440","res_in":"0.039sec"}
+2023-03-09 14:16:03 - info:  routes.index: 4e61ce70-2838-4af3-bbee-719db69b0ccf=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 14:16:03.933"}
+2023-03-09 14:16:03 - info:  inside getUserBasedNews :: 
+2023-03-09 14:16:03 - info:  dbData: checkPlan(): 
+2023-03-09 14:16:03 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:16:03 - info:  getUserBasedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:16:03 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:16:03 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:16:03 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:16:03 - info:  dbData: checkUsersNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"ffd133ff-87cf-4896-aae3-3a6730408323"}]
+2023-03-09 14:16:03 - info:  getUserBasedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"ffd133ff-87cf-4896-aae3-3a6730408323"}]}
+2023-03-09 14:16:03 - info:  routes.index: 4e61ce70-2838-4af3-bbee-719db69b0ccf=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 14:16:03.933","res_t":"2023-03-09 14:16:03.946","res_in":"0.013sec"}
+2023-03-09 14:16:49 - info:  routes.index: 8966c6c3-aa84-4770-af57-fbbf34f5fdd7=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 14:16:49.694"}
+2023-03-09 14:16:49 - info:  inside getUserBasedNews :: 
+2023-03-09 14:16:49 - info:  dbData: checkPlan(): 
+2023-03-09 14:16:49 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:16:49 - info:  getUserBasedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:16:49 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:16:49 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:16:49 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:16:49 - info:  dbData: checkUsersNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}]
+2023-03-09 14:16:49 - info:  getUserBasedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}]}
+2023-03-09 14:16:49 - info:  routes.index: 8966c6c3-aa84-4770-af57-fbbf34f5fdd7=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","req_t":"2023-03-09 14:16:49.694","res_t":"2023-03-09 14:16:49.706","res_in":"0.012sec"}
+2023-03-09 14:18:34 - info:  routes.index: 4423eb31-c28a-48b2-8f0a-a1660548b360=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews","req_t":"2023-03-09 14:18:34.713"}
+2023-03-09 14:18:34 - info:  inside getUserBasedNews :: 
+2023-03-09 14:18:34 - error:  getUserBasedNews function :: error:  {"type":{"status_code":400,"code":4000,"message":"Invalid request"},"err":["followerId is required"]}
+2023-03-09 14:18:34 - info:  routes.index: 4423eb31-c28a-48b2-8f0a-a1660548b360=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews","req_t":"2023-03-09 14:18:34.713","res_t":"2023-03-09 14:18:34.719","res_in":"0.006sec"}
+2023-03-09 14:18:42 - info:  routes.index: 70b0f046-24c1-4500-ae19-ae3fb569423d=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:18:42.485"}
+2023-03-09 14:18:42 - info:  inside getNews :: 
+2023-03-09 14:18:42 - info:  dbData: checkPlan(): 
+2023-03-09 14:18:42 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:18:42 - info:  getNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:18:42 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:18:42 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:18:42 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:18:42 - info:  dbData: checkUsersNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:18:42 - info:  getNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:18:42 - info:  routes.index: 70b0f046-24c1-4500-ae19-ae3fb569423d=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:18:42.485","res_t":"2023-03-09 14:18:42.493","res_in":"0.008sec"}
+2023-03-09 14:18:45 - info:  routes.index: 76c93b4f-6247-4f94-a40b-ce9d77662271=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:18:45.245"}
+2023-03-09 14:18:45 - info:  inside getNews :: 
+2023-03-09 14:18:45 - info:  dbData: checkPlan(): 
+2023-03-09 14:18:45 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:18:45 - info:  getNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:18:45 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:18:45 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:18:45 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:18:45 - info:  dbData: checkUsersNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:18:45 - info:  getNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:18:45 - info:  routes.index: 76c93b4f-6247-4f94-a40b-ce9d77662271=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:18:45.245","res_t":"2023-03-09 14:18:45.253","res_in":"0.008sec"}
+2023-03-09 14:19:02 - info:  routes.index: 5d9cd5de-b6c3-4b12-9aa7-caa94108b404=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:19:02.729"}
+2023-03-09 14:19:02 - info:  inside getNews :: 
+2023-03-09 14:19:02 - info:  dbData: checkPlan(): 
+2023-03-09 14:19:02 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:19:02 - info:  getNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:19:02 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:19:02 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:19:02 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:19:02 - info:  dbData: checkUsersNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:19:02 - info:  getNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:19:02 - info:  routes.index: 5d9cd5de-b6c3-4b12-9aa7-caa94108b404=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:19:02.729","res_t":"2023-03-09 14:19:02.745","res_in":"0.016sec"}
+2023-03-09 14:19:22 - info:  routes.index: e1ce5e60-8fc8-418f-a6da-a36cfdea1af3=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:19:22.927"}
+2023-03-09 14:19:22 - info:  inside getNews :: 
+2023-03-09 14:19:22 - info:  dbData: checkPlan(): 
+2023-03-09 14:19:22 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:19:22 - info:  getNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:19:22 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:19:22 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:19:22 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:19:22 - info:  dbData: checkUsersNews(): then 1: []
+2023-03-09 14:19:22 - error:  getNews function :: error:  {"type":{"status_code":200,"code":3000,"message":"No record found."},"data":{}}
+2023-03-09 14:19:22 - info:  routes.index: e1ce5e60-8fc8-418f-a6da-a36cfdea1af3=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:19:22.927","res_t":"2023-03-09 14:19:22.937","res_in":"0.01sec"}
+2023-03-09 14:19:30 - info:  routes.index: d3da8639-c4c3-4c5f-af5e-9f19f94be5b0=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:19:30.222"}
+2023-03-09 14:19:30 - info:  inside getNews :: 
+2023-03-09 14:19:30 - info:  dbData: checkPlan(): 
+2023-03-09 14:19:30 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:19:30 - info:  getNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:19:30 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:19:30 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:19:30 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:19:30 - info:  dbData: checkUsersNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:19:30 - info:  getNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:19:30 - info:  routes.index: d3da8639-c4c3-4c5f-af5e-9f19f94be5b0=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNews","req_t":"2023-03-09 14:19:30.222","res_t":"2023-03-09 14:19:30.230","res_in":"0.008sec"}
+2023-03-09 14:20:53 - info:  routes.index: 08e7cc37-2b89-47fc-a291-f6728ea339d4=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 14:20:53.913"}
+2023-03-09 14:20:53 - info:  inside getNewsDetails :: 
+2023-03-09 14:20:53 - info:  dbData: checkPlan(): 
+2023-03-09 14:20:53 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:20:53 - info:  getNewsDetails function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:20:53 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:20:53 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:20:53 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:20:53 - info:  dbData: checkUsersNews(): then 1: []
+2023-03-09 14:20:53 - error:  getNewsDetails function :: error:  {"type":{"status_code":200,"code":3000,"message":"No record found."},"data":{}}
+2023-03-09 14:20:53 - info:  routes.index: 08e7cc37-2b89-47fc-a291-f6728ea339d4=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 14:20:53.913","res_t":"2023-03-09 14:20:53.922","res_in":"0.009sec"}
+2023-03-09 14:21:04 - info:  routes.index: f9829ea9-6295-4082-83fe-c3295ce9bc11=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 14:21:04.743"}
+2023-03-09 14:21:04 - info:  inside getNewsDetails :: 
+2023-03-09 14:21:04 - info:  dbData: checkPlan(): 
+2023-03-09 14:21:04 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:21:04 - info:  getNewsDetails function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:21:04 - info:  dbData: checkUsersNews(): 
+2023-03-09 14:21:04 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:21:04 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:21:04 - info:  dbData: checkUsersNews(): then 1: []
+2023-03-09 14:21:04 - error:  getNewsDetails function :: error:  {"type":{"status_code":200,"code":3000,"message":"No record found."},"data":{}}
+2023-03-09 14:21:04 - info:  routes.index: f9829ea9-6295-4082-83fe-c3295ce9bc11=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 14:21:04.743","res_t":"2023-03-09 14:21:04.751","res_in":"0.008sec"}
+2023-03-09 14:22:39 - info:  databases constructor called.
+2023-03-09 14:22:39 - info:  redis_lib.constructor called.
+2023-03-09 14:22:39 - info:  mysqlLib.constructor called.
+2023-03-09 14:22:39 - info:  3/9/2023, 2:22:39 PM   >> Worker PID: 298192
+2023-03-09 14:22:39 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 14:22:39 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 14:22:40 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:22:41 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:22:41 - info:  connections open.
+2023-03-09 14:22:41 - info:  Initializing swagger doc Routes Completed
+2023-03-09 14:22:41 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 14:23:28 - info:  databases constructor called.
+2023-03-09 14:23:28 - info:  redis_lib.constructor called.
+2023-03-09 14:23:28 - info:  mysqlLib.constructor called.
+2023-03-09 14:23:28 - info:  3/9/2023, 2:23:28 PM   >> Worker PID: 299190
+2023-03-09 14:23:28 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 14:23:28 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 14:23:29 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:23:29 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:23:29 - info:  connections open.
+2023-03-09 14:23:30 - info:  Initializing swagger doc Routes Completed
+2023-03-09 14:23:30 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 14:23:31 - info:  routes.index: 9478659c-1884-4acb-bf6e-e43209d460ca=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 14:23:31.973"}
+2023-03-09 14:23:31 - info:  inside getNewsDetails :: 
+2023-03-09 14:23:31 - info:  dbData: checkPlan(): 
+2023-03-09 14:23:31 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:23:31 - info:  getNewsDetails function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:23:31 - info:  dbData: checkNewsById(): 
+2023-03-09 14:23:31 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:23:32 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:23:32 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:23:32 - info:  getNewsDetails function :: Then 2 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}}
+2023-03-09 14:23:32 - info:  routes.index: 9478659c-1884-4acb-bf6e-e43209d460ca=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 14:23:31.973","res_t":"2023-03-09 14:23:32.014","res_in":"0.041sec"}
+2023-03-09 14:23:45 - info:  routes.index: 2e9ed57c-d9c1-478c-ac00-d0637edf1eae=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 14:23:45.654"}
+2023-03-09 14:23:45 - info:  inside getNewsDetails :: 
+2023-03-09 14:23:45 - info:  dbData: checkPlan(): 
+2023-03-09 14:23:45 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:23:45 - info:  getNewsDetails function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:23:45 - info:  dbData: checkNewsById(): 
+2023-03-09 14:23:45 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:23:45 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:23:45 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}]
+2023-03-09 14:23:45 - info:  getNewsDetails function :: Then 2 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}}
+2023-03-09 14:23:45 - info:  routes.index: 2e9ed57c-d9c1-478c-ac00-d0637edf1eae=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 14:23:45.654","res_t":"2023-03-09 14:23:45.664","res_in":"0.01sec"}
+2023-03-09 14:24:33 - info:  routes.index: 3564cebc-a048-49ae-8146-ff3f6046a90a=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:24:33.553"}
+2023-03-09 14:24:33 - info:  inside getSuggestedNews :: 
+2023-03-09 14:24:33 - info:  dbData: checkPlan(): 
+2023-03-09 14:24:33 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:24:33 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:24:33 - info:  dbData: checkSuggestNews(): 
+2023-03-09 14:24:33 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:24:33 - error:  mysqlLib.query error in query :: {"err_code":"ER_BAD_FIELD_ERROR","err_msg":"Unknown column 'categoryId' in 'where clause'","conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTitle, news_description as newsDescription, news_url as newsUrl, category_id as categoryId\n  FROM news\n  where categoryId in ('u92821eb-ea03-476d-9652-d5b88b3c50f8,9a268f89-2a3f-4353-a363-499b6c6e09c3') and is_active = 1\n  order by created_on desc; "}
+2023-03-09 14:24:33 - error:  dbData: error in check news by id function:  {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'categoryId' in 'where clause'"}
+2023-03-09 14:24:33 - error:  getSuggestedNews function :: error:  {"type":{"status_code":500,"code":5000,"message":"Something went wrong. Please try again later."},"err":{"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'categoryId' in 'where clause'"}}
+2023-03-09 14:24:33 - info:  routes.index: 3564cebc-a048-49ae-8146-ff3f6046a90a=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:24:33.553","res_t":"2023-03-09 14:24:33.565","res_in":"0.012sec"}
+2023-03-09 14:25:09 - info:  databases constructor called.
+2023-03-09 14:25:09 - info:  redis_lib.constructor called.
+2023-03-09 14:25:09 - info:  mysqlLib.constructor called.
+2023-03-09 14:25:09 - info:  3/9/2023, 2:25:09 PM   >> Worker PID: 301710
+2023-03-09 14:25:09 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 14:25:09 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 14:25:10 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:25:10 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:25:10 - info:  connections open.
+2023-03-09 14:25:10 - info:  Initializing swagger doc Routes Completed
+2023-03-09 14:25:10 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 14:25:14 - info:  routes.index: a2d3c65e-4372-457d-9ea6-d830cee7f8ac=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:25:14.399"}
+2023-03-09 14:25:14 - info:  inside getSuggestedNews :: 
+2023-03-09 14:25:14 - info:  dbData: checkPlan(): 
+2023-03-09 14:25:14 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:25:14 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:25:14 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8,9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 14:25:14 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:25:14 - error:  mysqlLib.query error in query :: {"err_code":"ER_BAD_FIELD_ERROR","err_msg":"Unknown column 'categoryId' in 'where clause'","conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTitle, news_description as newsDescription, news_url as newsUrl, category_id as categoryId\n  FROM news\n  where categoryId in ('u92821eb-ea03-476d-9652-d5b88b3c50f8,9a268f89-2a3f-4353-a363-499b6c6e09c3') and is_active = 1\n  order by created_on desc; "}
+2023-03-09 14:25:14 - error:  dbData: error in check news by id function:  {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'categoryId' in 'where clause'"}
+2023-03-09 14:25:14 - error:  getSuggestedNews function :: error:  {"type":{"status_code":500,"code":5000,"message":"Something went wrong. Please try again later."},"err":{"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'categoryId' in 'where clause'"}}
+2023-03-09 14:25:14 - info:  routes.index: a2d3c65e-4372-457d-9ea6-d830cee7f8ac=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:25:14.399","res_t":"2023-03-09 14:25:14.430","res_in":"0.031sec"}
+2023-03-09 14:26:22 - info:  databases constructor called.
+2023-03-09 14:26:22 - info:  redis_lib.constructor called.
+2023-03-09 14:26:22 - info:  mysqlLib.constructor called.
+2023-03-09 14:26:22 - info:  3/9/2023, 2:26:22 PM   >> Worker PID: 302850
+2023-03-09 14:26:22 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 14:26:22 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 14:26:23 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:26:23 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:26:23 - info:  connections open.
+2023-03-09 14:26:23 - info:  Initializing swagger doc Routes Completed
+2023-03-09 14:26:23 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 14:26:28 - info:  routes.index: 5f097d46-d718-454c-b95a-c9093526cb86=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:26:28.376"}
+2023-03-09 14:26:28 - info:  inside getSuggestedNews :: 
+2023-03-09 14:26:28 - info:  dbData: checkPlan(): 
+2023-03-09 14:26:28 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:26:28 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:26:28 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 14:26:28 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:26:28 - error:  mysqlLib.query error in query :: {"err_code":"ER_BAD_FIELD_ERROR","err_msg":"Unknown column 'categoryId' in 'where clause'","conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTitle, news_description as newsDescription, news_url as newsUrl, category_id as categoryId\n  FROM news\n  where categoryId in ('u92821eb-ea03-476d-9652-d5b88b3c50f8', '9a268f89-2a3f-4353-a363-499b6c6e09c3') and is_active = 1\n  order by created_on desc; "}
+2023-03-09 14:26:28 - error:  dbData: error in check news by id function:  {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'categoryId' in 'where clause'"}
+2023-03-09 14:26:28 - error:  getSuggestedNews function :: error:  {"type":{"status_code":500,"code":5000,"message":"Something went wrong. Please try again later."},"err":{"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'categoryId' in 'where clause'"}}
+2023-03-09 14:26:28 - info:  routes.index: 5f097d46-d718-454c-b95a-c9093526cb86=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:26:28.376","res_t":"2023-03-09 14:26:28.400","res_in":"0.024sec"}
+2023-03-09 14:27:10 - info:  databases constructor called.
+2023-03-09 14:27:10 - info:  redis_lib.constructor called.
+2023-03-09 14:27:10 - info:  mysqlLib.constructor called.
+2023-03-09 14:27:11 - info:  3/9/2023, 2:27:11 PM   >> Worker PID: 303950
+2023-03-09 14:27:11 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 14:27:11 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 14:27:12 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:27:12 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:27:12 - info:  connections open.
+2023-03-09 14:27:12 - info:  Initializing swagger doc Routes Completed
+2023-03-09 14:27:12 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 14:27:14 - info:  routes.index: 5e855627-240c-4a52-b112-9897069b0605=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:27:14.926"}
+2023-03-09 14:27:14 - info:  inside getSuggestedNews :: 
+2023-03-09 14:27:14 - info:  dbData: checkPlan(): 
+2023-03-09 14:27:14 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:27:14 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:27:14 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 14:27:14 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:27:14 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:27:14 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:27:14 - info:  getSuggestedNews function :: Then 2 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}}
+2023-03-09 14:27:14 - info:  routes.index: 5e855627-240c-4a52-b112-9897069b0605=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:27:14.926","res_t":"2023-03-09 14:27:14.954","res_in":"0.028sec"}
+2023-03-09 14:27:31 - info:  databases constructor called.
+2023-03-09 14:27:31 - info:  redis_lib.constructor called.
+2023-03-09 14:27:31 - info:  mysqlLib.constructor called.
+2023-03-09 14:27:31 - info:  3/9/2023, 2:27:31 PM   >> Worker PID: 304042
+2023-03-09 14:27:31 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 14:27:31 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 14:27:32 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:27:32 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 14:27:32 - info:  connections open.
+2023-03-09 14:27:32 - info:  Initializing swagger doc Routes Completed
+2023-03-09 14:27:32 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 14:27:35 - info:  routes.index: 19d52c85-f9c4-4cb8-93f8-8da4be44c691=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:27:35.295"}
+2023-03-09 14:27:35 - info:  inside getSuggestedNews :: 
+2023-03-09 14:27:35 - info:  dbData: checkPlan(): 
+2023-03-09 14:27:35 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:27:35 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:27:35 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 14:27:35 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:27:35 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:27:35 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:27:35 - info:  getSuggestedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:27:35 - info:  routes.index: 19d52c85-f9c4-4cb8-93f8-8da4be44c691=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:27:35.295","res_t":"2023-03-09 14:27:35.329","res_in":"0.034sec"}
+2023-03-09 14:28:10 - info:  routes.index: 6f6de6eb-2b0c-44a9-83e4-bfa8277b6d0a=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:28:10.915"}
+2023-03-09 14:28:10 - info:  inside getSuggestedNews :: 
+2023-03-09 14:28:10 - info:  dbData: checkPlan(): 
+2023-03-09 14:28:10 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:28:10 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:28:10 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 14:28:10 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:28:10 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:28:10 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:28:10 - info:  getSuggestedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:28:10 - info:  routes.index: 6f6de6eb-2b0c-44a9-83e4-bfa8277b6d0a=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:28:10.915","res_t":"2023-03-09 14:28:10.945","res_in":"0.03sec"}
+2023-03-09 14:28:22 - info:  routes.index: f1a377d7-f8f9-4e7c-a84e-11296bc8359f=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:28:22.435"}
+2023-03-09 14:28:22 - info:  inside getSuggestedNews :: 
+2023-03-09 14:28:22 - info:  dbData: checkPlan(): 
+2023-03-09 14:28:22 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:28:22 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:28:22 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 14:28:22 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:28:22 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:28:22 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:28:22 - info:  getSuggestedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:28:22 - info:  routes.index: f1a377d7-f8f9-4e7c-a84e-11296bc8359f=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:28:22.435","res_t":"2023-03-09 14:28:22.442","res_in":"0.007sec"}
+2023-03-09 14:29:10 - info:  routes.index: 944fb5da-c9fe-4206-a3a5-4e1825f998c5=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:29:10.655"}
+2023-03-09 14:29:10 - info:  getUserDetails:
+2023-03-09 14:29:10 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"select username, full_name as fullName, photo_url "}
+2023-03-09 14:29:10 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:29:10 - info:  dbData: getUserDetails(): then 1: [{"username":"support_1","fullName":null,"photoUrl":null,"categoryId":["u92821eb-ea03-476d-9652-d5b88b3c50f8,9a268f89-2a3f-4353-a363-499b6c6e09c3"],"planId":"f717a43a-826c-48a2-9a60-649c298cef09","followingUserCount":"0","description":null,"userStatus":null,"freeTrial":1,"createdOn":"2023-02-23T11:34:32.000Z"}]
+2023-03-09 14:29:10 - info:  inside getSuggestedNews :: 
+2023-03-09 14:29:10 - info:  dbData: checkPlan(): 
+2023-03-09 14:29:10 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:29:10 - info:  dbData: setRedisPlanKey(): 
+2023-03-09 14:29:10 - info:  dbData: getPlanListById(): 
+2023-03-09 14:29:10 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  select plan_id as planId, plan_name as planName"}
+2023-03-09 14:29:10 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:29:10 - info:  dbData: getPlanListById(): then 1: [{"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}]
+2023-03-09 14:29:10 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:29:10 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 14:29:10 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:29:10 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:29:10 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:29:10 - info:  getSuggestedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:29:10 - info:  routes.index: 944fb5da-c9fe-4206-a3a5-4e1825f998c5=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:29:10.655","res_t":"2023-03-09 14:29:10.688","res_in":"0.033sec"}
+2023-03-09 14:29:51 - info:  routes.index: 681903b0-b5fe-4b3c-8654-b904340d239c=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:29:51.991"}
+2023-03-09 14:29:51 - info:  getUserDetails:
+2023-03-09 14:29:51 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"select username, full_name as fullName, photo_url "}
+2023-03-09 14:29:51 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:29:51 - info:  dbData: getUserDetails(): then 1: [{"username":"support_1","fullName":null,"photoUrl":null,"categoryId":["u92821eb-ea03-476d-9652-d5b88b3c50f8,9a268f89-2a3f-4353-a363-499b6c6e09c3"],"planId":"f717a43a-826c-48a2-9a60-649c298cef09","followingUserCount":"0","description":null,"userStatus":null,"freeTrial":1,"createdOn":"2023-02-23T11:34:32.000Z"}]
+2023-03-09 14:29:51 - info:  inside getSuggestedNews :: 
+2023-03-09 14:29:51 - info:  dbData: checkPlan(): 
+2023-03-09 14:29:51 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:29:51 - info:  dbData: setRedisPlanKey(): 
+2023-03-09 14:29:51 - info:  dbData: getPlanListById(): 
+2023-03-09 14:29:51 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  select plan_id as planId, plan_name as planName"}
+2023-03-09 14:29:52 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:29:52 - info:  dbData: getPlanListById(): then 1: [{"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}]
+2023-03-09 14:29:52 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:29:52 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 14:29:52 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:29:52 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:29:52 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:29:52 - info:  getSuggestedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:29:52 - info:  routes.index: 681903b0-b5fe-4b3c-8654-b904340d239c=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:29:51.991","res_t":"2023-03-09 14:29:52.007","res_in":"0.016sec"}
+2023-03-09 14:31:25 - info:  routes.index: bddfe8f5-33e2-4b05-9df9-e97c06dd6128=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:31:25.276"}
+2023-03-09 14:31:25 - info:  getUserDetails:
+2023-03-09 14:31:25 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"select username, full_name as fullName, photo_url "}
+2023-03-09 14:31:25 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:31:25 - info:  dbData: getUserDetails(): then 1: [{"username":"support_1","fullName":null,"photoUrl":null,"categoryId":["u92821eb-ea03-476d-9652-d5b88b3c50f8,9a268f89-2a3f-4353-a363-499b6c6e09c3"],"planId":"f717a43a-826c-48a2-9a60-649c298cef09","followingUserCount":"0","description":null,"userStatus":null,"freeTrial":1,"createdOn":"2023-02-23T11:34:32.000Z"}]
+2023-03-09 14:31:25 - info:  inside getSuggestedNews :: 
+2023-03-09 14:31:25 - info:  dbData: checkPlan(): 
+2023-03-09 14:31:25 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 14:31:25 - info:  dbData: setRedisPlanKey(): 
+2023-03-09 14:31:25 - info:  dbData: getPlanListById(): 
+2023-03-09 14:31:25 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  select plan_id as planId, plan_name as planName"}
+2023-03-09 14:31:25 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:31:25 - info:  dbData: getPlanListById(): then 1: [{"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}]
+2023-03-09 14:31:25 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 14:31:25 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 14:31:25 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 14:31:25 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 14:31:25 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 14:31:25 - info:  getSuggestedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 14:31:25 - info:  routes.index: bddfe8f5-33e2-4b05-9df9-e97c06dd6128=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 14:31:25.276","res_t":"2023-03-09 14:31:25.292","res_in":"0.016sec"}
+2023-03-09 16:52:56 - info:  databases constructor called.
+2023-03-09 16:52:56 - info:  redis_lib.constructor called.
+2023-03-09 16:52:57 - info:  mysqlLib.constructor called.
+2023-03-09 16:52:57 - info:  3/9/2023, 4:52:57 PM   >> Worker PID: 68231
+2023-03-09 16:52:57 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 16:52:57 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 16:52:58 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 16:52:59 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 16:52:59 - info:  connections open.
+2023-03-09 16:53:01 - info:  Initializing swagger doc Routes Completed
+2023-03-09 16:53:01 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 16:53:27 - info:  routes.index: 7a1c0ac2-57b1-493e-b2fc-eb907f4e7f8a=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/mapped/addcategory","req_t":"2023-03-09 16:53:27.747"}
+2023-03-09 16:53:27 - info:  getUserDetails:
+2023-03-09 16:53:27 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"select username, full_name as fullName, photo_url "}
+2023-03-09 16:53:27 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:53:27 - info:  dbData: getUserDetails(): then 1: [{"username":"support_1","fullName":null,"photoUrl":null,"categoryId":["u92821eb-ea03-476d-9652-d5b88b3c50f8,9a268f89-2a3f-4353-a363-499b6c6e09c3"],"planId":"f717a43a-826c-48a2-9a60-649c298cef09","followingUserCount":"0","description":null,"userStatus":null,"freeTrial":1,"createdOn":"2023-02-23T11:34:32.000Z"}]
+2023-03-09 16:53:27 - info:  Inside addUpdateCategory
+2023-03-09 16:53:27 - info:  dbData: checkByCategoryId():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","ffd133ff-87cf-4896-aae3-3a6730408323"]
+2023-03-09 16:53:27 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT GROUP_CONCAT(category_id) as categoryId\n"}
+2023-03-09 16:53:27 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:53:27 - info:  dbData: checkByCategoryId(): then 1: [{"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8,ffd133ff-87cf-4896-aae3-3a6730408323"}]
+2023-03-09 16:53:27 - info:  dbData: insertUpdateCategory():  4a1c920a-550f-482e-9df3-d92bf8f82360
+2023-03-09 16:53:27 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  update user_details \n  set category_id =JSON_AR"}
+2023-03-09 16:53:27 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:53:27 - info:  dbData: insertUpdateCategory(): then 1: {"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":1}
+2023-03-09 16:53:27 - info:  dbData: updateCategoryCount():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","ffd133ff-87cf-4896-aae3-3a6730408323"] ["u92821eb-ea03-476d-9652-d5b88b3c50f8","9a268f89-2a3f-4353-a363-499b6c6e09c3"]
+2023-03-09 16:53:27 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"update category \n  set followers_count = followers"}
+2023-03-09 16:53:27 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:53:27 - info:  dbData: updateCategoryCount(): then 1: [{"fieldCount":0,"affectedRows":2,"insertId":0,"info":"Rows matched: 2  Changed: 2  Warnings: 0","serverStatus":42,"warningStatus":0,"changedRows":2},{"fieldCount":0,"affectedRows":2,"insertId":0,"info":"Rows matched: 2  Changed: 2  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":2}]
+2023-03-09 16:53:27 - info:  romoveRedisUserdetials: 4a1c920a-550f-482e-9df3-d92bf8f82360
+2023-03-09 16:53:27 - info:  routes.index: 7a1c0ac2-57b1-493e-b2fc-eb907f4e7f8a=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/mapped/addcategory","req_t":"2023-03-09 16:53:27.747","res_t":"2023-03-09 16:53:27.840","res_in":"0.093sec"}
+2023-03-09 16:56:59 - info:  routes.index: 9f64dd00-6c29-4904-a806-11d2442ba33b=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 16:56:59.723"}
+2023-03-09 16:56:59 - info:  getUserDetails:
+2023-03-09 16:56:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"select username, full_name as fullName, photo_url "}
+2023-03-09 16:56:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:56:59 - info:  dbData: getUserDetails(): then 1: [{"username":"support_1","fullName":null,"photoUrl":null,"categoryId":["u92821eb-ea03-476d-9652-d5b88b3c50f8,ffd133ff-87cf-4896-aae3-3a6730408323"],"planId":"f717a43a-826c-48a2-9a60-649c298cef09","followingUserCount":"0","description":null,"userStatus":null,"freeTrial":1,"createdOn":"2023-02-23T11:34:32.000Z"}]
+2023-03-09 16:56:59 - info:  inside getSuggestedNews :: 
+2023-03-09 16:56:59 - info:  dbData: checkPlan(): 
+2023-03-09 16:56:59 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 16:56:59 - info:  dbData: setRedisPlanKey(): 
+2023-03-09 16:56:59 - info:  dbData: getPlanListById(): 
+2023-03-09 16:56:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  select plan_id as planId, plan_name as planName"}
+2023-03-09 16:56:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:56:59 - info:  dbData: getPlanListById(): then 1: [{"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}]
+2023-03-09 16:56:59 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 16:56:59 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","ffd133ff-87cf-4896-aae3-3a6730408323"]
+2023-03-09 16:56:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 16:56:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:56:59 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 16:56:59 - info:  getSuggestedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 16:56:59 - info:  routes.index: 9f64dd00-6c29-4904-a806-11d2442ba33b=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 16:56:59.723","res_t":"2023-03-09 16:56:59.758","res_in":"0.035sec"}
+2023-03-09 16:57:35 - info:  routes.index: f5316767-3ba3-4b47-9b64-4cc2c0f8dd51=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/mapped/addcategory","req_t":"2023-03-09 16:57:35.406"}
+2023-03-09 16:57:35 - info:  Inside addUpdateCategory
+2023-03-09 16:57:35 - info:  dbData: checkByCategoryId():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","ffd133ff-87cf-4896-aae3-3a6730408323","b75b7403-d741-4fb8-a930-e6144457ffdd"]
+2023-03-09 16:57:35 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT GROUP_CONCAT(category_id) as categoryId\n"}
+2023-03-09 16:57:35 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:57:35 - info:  dbData: checkByCategoryId(): then 1: [{"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8,b75b7403-d741-4fb8-a930-e6144457ffdd,ffd133ff-87cf-4896-aae3-3a6730408323"}]
+2023-03-09 16:57:35 - info:  dbData: insertUpdateCategory():  4a1c920a-550f-482e-9df3-d92bf8f82360
+2023-03-09 16:57:35 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  update user_details \n  set category_id =JSON_AR"}
+2023-03-09 16:57:35 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:57:35 - info:  dbData: insertUpdateCategory(): then 1: {"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":1}
+2023-03-09 16:57:35 - info:  dbData: updateCategoryCount():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","b75b7403-d741-4fb8-a930-e6144457ffdd","ffd133ff-87cf-4896-aae3-3a6730408323"] ["u92821eb-ea03-476d-9652-d5b88b3c50f8","ffd133ff-87cf-4896-aae3-3a6730408323"]
+2023-03-09 16:57:35 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"update category \n  set followers_count = followers"}
+2023-03-09 16:57:35 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:57:35 - info:  dbData: updateCategoryCount(): then 1: [{"fieldCount":0,"affectedRows":3,"insertId":0,"info":"Rows matched: 3  Changed: 3  Warnings: 0","serverStatus":42,"warningStatus":0,"changedRows":3},{"fieldCount":0,"affectedRows":2,"insertId":0,"info":"Rows matched: 2  Changed: 2  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":2}]
+2023-03-09 16:57:35 - info:  romoveRedisUserdetials: 4a1c920a-550f-482e-9df3-d92bf8f82360
+2023-03-09 16:57:35 - info:  routes.index: f5316767-3ba3-4b47-9b64-4cc2c0f8dd51=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/mapped/addcategory","req_t":"2023-03-09 16:57:35.406","res_t":"2023-03-09 16:57:35.517","res_in":"0.111sec"}
+2023-03-09 16:57:46 - info:  routes.index: 0444422c-1933-4fd6-8f23-ca5107c03a42=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 16:57:46.172"}
+2023-03-09 16:57:46 - info:  getUserDetails:
+2023-03-09 16:57:46 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"select username, full_name as fullName, photo_url "}
+2023-03-09 16:57:46 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:57:46 - info:  dbData: getUserDetails(): then 1: [{"username":"support_1","fullName":null,"photoUrl":null,"categoryId":["u92821eb-ea03-476d-9652-d5b88b3c50f8,b75b7403-d741-4fb8-a930-e6144457ffdd,ffd133ff-87cf-4896-aae3-3a6730408323"],"planId":"f717a43a-826c-48a2-9a60-649c298cef09","followingUserCount":"0","description":null,"userStatus":null,"freeTrial":1,"createdOn":"2023-02-23T11:34:32.000Z"}]
+2023-03-09 16:57:46 - info:  inside getSuggestedNews :: 
+2023-03-09 16:57:46 - info:  dbData: checkPlan(): 
+2023-03-09 16:57:46 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 16:57:46 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 16:57:46 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","b75b7403-d741-4fb8-a930-e6144457ffdd","ffd133ff-87cf-4896-aae3-3a6730408323"]
+2023-03-09 16:57:46 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 16:57:46 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 16:57:46 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"},{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 16:57:46 - info:  getSuggestedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"},{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 16:57:46 - info:  routes.index: 0444422c-1933-4fd6-8f23-ca5107c03a42=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 16:57:46.172","res_t":"2023-03-09 16:57:46.188","res_in":"0.016sec"}
+2023-03-09 17:10:39 - info:  routes.index: 08089d4a-4c7b-4fcf-8065-c6428ef548f0=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:10:39.418"}
+2023-03-09 17:10:39 - info:  routes.index: 08089d4a-4c7b-4fcf-8065-c6428ef548f0=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:10:39.418","res_t":"2023-03-09 17:10:39.420","res_in":"0.002sec"}
+2023-03-09 17:10:59 - info:  routes.index: 86e84f33-c635-425a-93e1-d05cfd9cb8f1=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:10:59.565"}
+2023-03-09 17:10:59 - info:  routes.index: 86e84f33-c635-425a-93e1-d05cfd9cb8f1=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:10:59.565","res_t":"2023-03-09 17:10:59.567","res_in":"0.002sec"}
+2023-03-09 17:11:24 - info:  routes.index: 32895912-486e-4d3e-a9aa-6b3b9a4ada76=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:11:24.284"}
+2023-03-09 17:11:24 - info:  routes.index: 32895912-486e-4d3e-a9aa-6b3b9a4ada76=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:11:24.284","res_t":"2023-03-09 17:11:24.286","res_in":"0.002sec"}
+2023-03-09 17:12:36 - info:  routes.index: 6b6cdec7-cdd0-4f22-8961-9fa58032d46d=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/mapped/special/user","req_t":"2023-03-09 17:12:36.666"}
+2023-03-09 17:12:36 - info:  routes.index: 6b6cdec7-cdd0-4f22-8961-9fa58032d46d=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/mapped/special/user","req_t":"2023-03-09 17:12:36.666","res_t":"2023-03-09 17:12:36.668","res_in":"0.002sec"}
+2023-03-09 17:12:48 - info:  routes.index: 7e38c425-98a2-446c-a81a-b3496d971cdb=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:12:48.031"}
+2023-03-09 17:12:48 - info:  routes.index: 7e38c425-98a2-446c-a81a-b3496d971cdb=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:12:48.031","res_t":"2023-03-09 17:12:48.033","res_in":"0.002sec"}
+2023-03-09 17:13:03 - info:  routes.index: 31fe9eb0-b148-487f-9b2d-f02958e28f35=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/mapped/special/user","req_t":"2023-03-09 17:13:03.656"}
+2023-03-09 17:13:03 - info:  Inside userFollows
+2023-03-09 17:13:03 - info:  dbData: getUserdetails():  4a1c920a-550f-482e-9df3-d92bf8f82360
+2023-03-09 17:13:03 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"select ud.username as userName, ud.created_by as f"}
+2023-03-09 17:13:03 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 17:13:03 - info:  dbData: getUserdetails(): then 1: [{"userName":"support_2","followUserId":"c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2","photoUrl":null,"fullName":null,"description":null,"userStatus":null,"isFollows":0}]
+2023-03-09 17:13:03 - info:  routes.index: 31fe9eb0-b148-487f-9b2d-f02958e28f35=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/mapped/special/user","req_t":"2023-03-09 17:13:03.656","res_t":"2023-03-09 17:13:03.667","res_in":"0.011sec"}
+2023-03-09 17:13:07 - info:  routes.index: 847d9dcc-3403-4afd-94b7-50f45afeaf12=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:13:07.503"}
+2023-03-09 17:13:07 - info:  inside addNewsMultiMedia :: 
+2023-03-09 17:13:07 - info:  dbData: checkPlan(): 
+2023-03-09 17:13:07 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 17:13:07 - info:  addNewsMultiMedia :: Then 1
+2023-03-09 17:13:07 - info:  filter
+2023-03-09 17:13:07 - info:  file mime type filter  --> true jpeg
+2023-03-09 17:13:07 - info:  filter
+2023-03-09 17:13:07 - info:  file mime type filter  --> true jpeg
+2023-03-09 17:13:07 - info:  routes.index: 847d9dcc-3403-4afd-94b7-50f45afeaf12=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/addNewsMultiMedia","req_t":"2023-03-09 17:13:07.503","res_t":"2023-03-09 17:13:07.581","res_in":"0.078sec"}
+2023-03-09 17:29:59 - info:  routes.index: db5f02de-a727-4e9e-8ad0-4300e87137db=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/addNews","req_t":"2023-03-09 17:29:59.325"}
+2023-03-09 17:29:59 - info:  inside addNews :: 
+2023-03-09 17:29:59 - info:  dbData: checkPlan(): 
+2023-03-09 17:29:59 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 17:29:59 - info:  addNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 17:29:59 - info:  dbData: checkNewsByAll(): 
+2023-03-09 17:29:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"SELECT news_id as newsId, news_title as newsTitle,"}
+2023-03-09 17:29:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 17:29:59 - info:  dbData: checkNewsByAll(): then 1: []
+2023-03-09 17:29:59 - info:  addNews :: then 1 false
+2023-03-09 17:29:59 - info:  dbData: updateNews(): 
+2023-03-09 17:29:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"insert into news (news_id, news_title, news_descri"}
+2023-03-09 17:29:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 17:29:59 - info:  dbData: updateNews(): then 1: [{"fieldCount":0,"affectedRows":1,"insertId":0,"info":"","serverStatus":10,"warningStatus":0},{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":0}]
+2023-03-09 17:29:59 - info:  addNews function :: Then 2 {"data":"4a1c920a-550f-482e-9df3-d92bf8f82360"}
+2023-03-09 17:29:59 - info:  routes.index: db5f02de-a727-4e9e-8ad0-4300e87137db=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/addNews","req_t":"2023-03-09 17:29:59.325","res_t":"2023-03-09 17:29:59.354","res_in":"0.029sec"}
+2023-03-09 17:40:19 - info:  routes.index: 948793f6-fcb2-4f38-904a-de708d51807f=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews","req_t":"2023-03-09 17:40:19.505"}
+2023-03-09 17:40:19 - info:  inside getUserBasedNews :: 
+2023-03-09 17:40:19 - error:  getUserBasedNews function :: error:  {"type":{"status_code":400,"code":4000,"message":"Invalid request"},"err":["followerId is required"]}
+2023-03-09 17:40:19 - info:  routes.index: 948793f6-fcb2-4f38-904a-de708d51807f=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews","req_t":"2023-03-09 17:40:19.505","res_t":"2023-03-09 17:40:19.509","res_in":"0.004sec"}
+2023-03-09 17:42:38 - info:  routes.index: cc1b4d49-52a6-4dc9-9c73-0aca98d94ee1=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=4a1c920a-550f-482e-9df3-d92bf8f82360","req_t":"2023-03-09 17:42:38.506"}
+2023-03-09 17:42:38 - info:  inside getUserBasedNews :: 
+2023-03-09 17:42:38 - info:  dbData: checkPlan(): 
+2023-03-09 17:42:38 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 17:42:38 - info:  getUserBasedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 17:42:38 - info:  dbData: checkUsersNews(): 
+2023-03-09 17:42:38 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 17:42:38 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 17:42:38 - info:  dbData: checkUsersNews(): then 1: [{"newsId":"ee75c5d6-01d7-45de-8f55-d800815842cb","newsTitle":"xyz","newsDescription":"xyz","newsUrl":["/location","/location"],"categoryId":"c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"},{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 17:42:38 - info:  getUserBasedNews function :: Then 2 {"data":[{"newsId":"ee75c5d6-01d7-45de-8f55-d800815842cb","newsTitle":"xyz","newsDescription":"xyz","newsUrl":["/location","/location"],"categoryId":"c64ffae4-ac8b-4a6f-acf9-6dd1abb9aea2"},{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 17:42:38 - info:  routes.index: cc1b4d49-52a6-4dc9-9c73-0aca98d94ee1=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getUserBasedNews?followerId=4a1c920a-550f-482e-9df3-d92bf8f82360","req_t":"2023-03-09 17:42:38.506","res_t":"2023-03-09 17:42:38.552","res_in":"0.046sec"}
+2023-03-09 17:51:44 - info:  routes.index: f08376ed-85c1-4cba-b361-cf1aecf96d99=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 17:51:44.748"}
+2023-03-09 17:51:44 - info:  inside getSuggestedNews :: 
+2023-03-09 17:51:44 - info:  dbData: checkPlan(): 
+2023-03-09 17:51:44 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 17:51:44 - info:  getSuggestedNews function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 17:51:44 - info:  dbData: checkSuggestNews():  ["u92821eb-ea03-476d-9652-d5b88b3c50f8","b75b7403-d741-4fb8-a930-e6144457ffdd","ffd133ff-87cf-4896-aae3-3a6730408323"]
+2023-03-09 17:51:44 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 17:51:44 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 17:51:44 - info:  dbData: checkSuggestNews(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"},{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 17:51:44 - info:  getSuggestedNews function :: Then 2 {"data":[{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"},{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]}
+2023-03-09 17:51:44 - info:  routes.index: f08376ed-85c1-4cba-b361-cf1aecf96d99=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getSuggestedNews","req_t":"2023-03-09 17:51:44.748","res_t":"2023-03-09 17:51:44.755","res_in":"0.007sec"}
+2023-03-09 17:59:26 - info:  databases constructor called.
+2023-03-09 17:59:26 - info:  redis_lib.constructor called.
+2023-03-09 17:59:26 - info:  mysqlLib.constructor called.
+2023-03-09 17:59:26 - info:  3/9/2023, 5:59:26 PM   >> Worker PID: 138816
+2023-03-09 17:59:26 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 17:59:26 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 17:59:27 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 17:59:27 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 17:59:27 - info:  connections open.
+2023-03-09 17:59:28 - info:  Initializing swagger doc Routes Completed
+2023-03-09 17:59:28 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:04:34 - info:  databases constructor called.
+2023-03-09 18:04:34 - info:  redis_lib.constructor called.
+2023-03-09 18:04:34 - info:  mysqlLib.constructor called.
+2023-03-09 18:04:34 - info:  3/9/2023, 6:04:34 PM   >> Worker PID: 144755
+2023-03-09 18:04:34 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:04:34 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:04:35 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:04:35 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:04:35 - info:  connections open.
+2023-03-09 18:04:36 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:04:36 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:05:12 - info:  routes.index: 63407714-7c8f-4c0e-85af-c9f188871e86=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 18:05:12.537"}
+2023-03-09 18:05:12 - info:  routes.index: 63407714-7c8f-4c0e-85af-c9f188871e86=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 18:05:12.537","res_t":"2023-03-09 18:05:12.550","res_in":"0.013sec"}
+2023-03-09 18:05:35 - info:  routes.index: 855e6ba3-ef8a-4746-9892-610e8e2dedd2=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 18:05:35.626"}
+2023-03-09 18:05:35 - info:  inside getNewsDetails :: 
+2023-03-09 18:05:35 - info:  dbData: checkPlan(): 
+2023-03-09 18:05:35 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 18:05:35 - info:  getNewsDetails function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 18:05:35 - info:  dbData: checkNewsById(): 
+2023-03-09 18:05:35 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 18:05:35 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 18:05:35 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 18:05:35 - info:  getNewsDetails function :: Then 2 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}}
+2023-03-09 18:05:35 - info:  routes.index: 855e6ba3-ef8a-4746-9892-610e8e2dedd2=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/getNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 18:05:35.626","res_t":"2023-03-09 18:05:35.697","res_in":"0.071sec"}
+2023-03-09 18:09:37 - info:  databases constructor called.
+2023-03-09 18:09:37 - info:  redis_lib.constructor called.
+2023-03-09 18:09:37 - info:  mysqlLib.constructor called.
+2023-03-09 18:09:37 - info:  3/9/2023, 6:09:37 PM   >> Worker PID: 150374
+2023-03-09 18:09:37 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:09:37 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:09:38 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:09:38 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:09:38 - info:  connections open.
+2023-03-09 18:09:38 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:09:38 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:09:44 - info:  databases constructor called.
+2023-03-09 18:09:44 - info:  redis_lib.constructor called.
+2023-03-09 18:09:44 - info:  mysqlLib.constructor called.
+2023-03-09 18:09:44 - info:  3/9/2023, 6:09:44 PM   >> Worker PID: 150507
+2023-03-09 18:09:44 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:09:44 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:09:45 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:09:45 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:09:51 - info:  databases constructor called.
+2023-03-09 18:09:51 - info:  redis_lib.constructor called.
+2023-03-09 18:09:51 - info:  mysqlLib.constructor called.
+2023-03-09 18:09:51 - info:  3/9/2023, 6:09:51 PM   >> Worker PID: 150619
+2023-03-09 18:09:51 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:09:51 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:09:52 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:09:52 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:10:01 - info:  databases constructor called.
+2023-03-09 18:10:01 - info:  redis_lib.constructor called.
+2023-03-09 18:10:02 - info:  mysqlLib.constructor called.
+2023-03-09 18:10:02 - info:  3/9/2023, 6:10:02 PM   >> Worker PID: 150691
+2023-03-09 18:10:02 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:10:02 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:10:03 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:10:03 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:10:03 - info:  connections open.
+2023-03-09 18:10:03 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:10:03 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:10:12 - info:  databases constructor called.
+2023-03-09 18:10:12 - info:  redis_lib.constructor called.
+2023-03-09 18:10:12 - info:  mysqlLib.constructor called.
+2023-03-09 18:10:12 - info:  3/9/2023, 6:10:12 PM   >> Worker PID: 151563
+2023-03-09 18:10:12 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:10:12 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:10:13 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:10:13 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:10:13 - info:  connections open.
+2023-03-09 18:10:13 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:10:13 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:11:28 - info:  databases constructor called.
+2023-03-09 18:11:28 - info:  redis_lib.constructor called.
+2023-03-09 18:11:28 - info:  mysqlLib.constructor called.
+2023-03-09 18:11:28 - info:  3/9/2023, 6:11:28 PM   >> Worker PID: 153083
+2023-03-09 18:11:28 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:11:28 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:11:29 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:11:29 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:11:29 - info:  connections open.
+2023-03-09 18:11:29 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:11:29 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:11:53 - info:  databases constructor called.
+2023-03-09 18:11:53 - info:  redis_lib.constructor called.
+2023-03-09 18:11:53 - info:  mysqlLib.constructor called.
+2023-03-09 18:11:53 - info:  3/9/2023, 6:11:53 PM   >> Worker PID: 153262
+2023-03-09 18:11:53 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:11:53 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:11:54 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:11:54 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:11:54 - info:  connections open.
+2023-03-09 18:11:55 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:11:55 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:13:43 - info:  databases constructor called.
+2023-03-09 18:13:43 - info:  redis_lib.constructor called.
+2023-03-09 18:13:44 - info:  mysqlLib.constructor called.
+2023-03-09 18:13:44 - info:  3/9/2023, 6:13:44 PM   >> Worker PID: 155195
+2023-03-09 18:13:44 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:13:44 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:13:45 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:13:45 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:13:45 - info:  connections open.
+2023-03-09 18:13:45 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:13:45 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:13:51 - info:  databases constructor called.
+2023-03-09 18:13:51 - info:  redis_lib.constructor called.
+2023-03-09 18:13:51 - info:  mysqlLib.constructor called.
+2023-03-09 18:13:51 - info:  3/9/2023, 6:13:51 PM   >> Worker PID: 155305
+2023-03-09 18:13:51 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:13:51 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:13:52 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:13:52 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:13:52 - info:  connections open.
+2023-03-09 18:13:52 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:13:52 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:15:03 - info:  databases constructor called.
+2023-03-09 18:15:03 - info:  redis_lib.constructor called.
+2023-03-09 18:15:03 - info:  mysqlLib.constructor called.
+2023-03-09 18:15:03 - info:  3/9/2023, 6:15:03 PM   >> Worker PID: 156363
+2023-03-09 18:15:03 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:15:03 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:15:04 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:15:04 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:15:04 - info:  connections open.
+2023-03-09 18:15:05 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:15:05 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:15:17 - info:  databases constructor called.
+2023-03-09 18:15:17 - info:  redis_lib.constructor called.
+2023-03-09 18:15:17 - info:  mysqlLib.constructor called.
+2023-03-09 18:15:17 - info:  3/9/2023, 6:15:17 PM   >> Worker PID: 157284
+2023-03-09 18:15:17 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:15:17 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:15:18 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:15:18 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:15:18 - info:  connections open.
+2023-03-09 18:15:19 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:15:19 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:15:39 - info:  databases constructor called.
+2023-03-09 18:15:39 - info:  redis_lib.constructor called.
+2023-03-09 18:15:39 - info:  mysqlLib.constructor called.
+2023-03-09 18:15:39 - info:  3/9/2023, 6:15:39 PM   >> Worker PID: 157727
+2023-03-09 18:15:39 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:15:39 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:15:40 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:15:40 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:15:40 - info:  connections open.
+2023-03-09 18:15:40 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:15:40 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:15:45 - info:  databases constructor called.
+2023-03-09 18:15:45 - info:  redis_lib.constructor called.
+2023-03-09 18:15:45 - info:  mysqlLib.constructor called.
+2023-03-09 18:15:46 - info:  3/9/2023, 6:15:45 PM   >> Worker PID: 157819
+2023-03-09 18:15:46 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:15:46 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:15:47 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:15:47 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:15:47 - info:  connections open.
+2023-03-09 18:15:47 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:15:47 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:16:00 - info:  databases constructor called.
+2023-03-09 18:16:00 - info:  redis_lib.constructor called.
+2023-03-09 18:16:00 - info:  mysqlLib.constructor called.
+2023-03-09 18:16:00 - info:  3/9/2023, 6:16:00 PM   >> Worker PID: 157987
+2023-03-09 18:16:00 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:16:00 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:16:01 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:16:01 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:16:01 - info:  connections open.
+2023-03-09 18:16:02 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:16:02 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:16:07 - info:  databases constructor called.
+2023-03-09 18:16:07 - info:  redis_lib.constructor called.
+2023-03-09 18:16:07 - info:  mysqlLib.constructor called.
+2023-03-09 18:16:07 - info:  3/9/2023, 6:16:07 PM   >> Worker PID: 158047
+2023-03-09 18:16:07 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:16:07 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:16:08 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:16:08 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:16:08 - info:  connections open.
+2023-03-09 18:16:09 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:16:09 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:16:10 - info:  databases constructor called.
+2023-03-09 18:16:10 - info:  redis_lib.constructor called.
+2023-03-09 18:16:10 - info:  mysqlLib.constructor called.
+2023-03-09 18:16:10 - info:  3/9/2023, 6:16:10 PM   >> Worker PID: 158341
+2023-03-09 18:16:10 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:16:11 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:16:12 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:16:12 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:16:12 - info:  connections open.
+2023-03-09 18:16:12 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:16:12 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:17:38 - info:  databases constructor called.
+2023-03-09 18:17:38 - info:  redis_lib.constructor called.
+2023-03-09 18:17:38 - info:  mysqlLib.constructor called.
+2023-03-09 18:17:38 - info:  3/9/2023, 6:17:38 PM   >> Worker PID: 160221
+2023-03-09 18:17:38 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:17:38 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:17:39 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:17:39 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:17:39 - info:  connections open.
+2023-03-09 18:17:40 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:17:40 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:17:47 - info:  databases constructor called.
+2023-03-09 18:17:47 - info:  redis_lib.constructor called.
+2023-03-09 18:17:47 - info:  mysqlLib.constructor called.
+2023-03-09 18:17:47 - info:  3/9/2023, 6:17:47 PM   >> Worker PID: 160351
+2023-03-09 18:17:47 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:17:47 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:17:48 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:17:48 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:17:48 - info:  connections open.
+2023-03-09 18:17:48 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:17:48 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:18:07 - info:  databases constructor called.
+2023-03-09 18:18:07 - info:  redis_lib.constructor called.
+2023-03-09 18:18:07 - info:  mysqlLib.constructor called.
+2023-03-09 18:18:07 - info:  3/9/2023, 6:18:07 PM   >> Worker PID: 160493
+2023-03-09 18:18:07 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:18:07 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:18:08 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:18:08 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:18:08 - info:  connections open.
+2023-03-09 18:18:08 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:18:08 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:18:38 - info:  databases constructor called.
+2023-03-09 18:18:38 - info:  redis_lib.constructor called.
+2023-03-09 18:18:38 - info:  mysqlLib.constructor called.
+2023-03-09 18:18:38 - info:  3/9/2023, 6:18:38 PM   >> Worker PID: 161432
+2023-03-09 18:18:38 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:18:38 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:18:39 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:18:39 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:18:39 - info:  connections open.
+2023-03-09 18:18:40 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:18:40 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:19:18 - info:  databases constructor called.
+2023-03-09 18:19:18 - info:  redis_lib.constructor called.
+2023-03-09 18:19:18 - info:  mysqlLib.constructor called.
+2023-03-09 18:19:18 - info:  3/9/2023, 6:19:18 PM   >> Worker PID: 162469
+2023-03-09 18:19:18 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 18:19:18 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 18:19:19 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:19:19 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 18:19:19 - info:  connections open.
+2023-03-09 18:19:20 - info:  Initializing swagger doc Routes Completed
+2023-03-09 18:19:20 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 18:19:23 - warn:  redisLib.close, function called {"port":"6379","host":"localhost"}
+2023-03-09 18:19:23 - warn:  mysqlLib.close, connection close {"host":"localhost","conn_name":"test"}
+2023-03-09 18:19:23 - info:  success connection closed.
+2023-03-09 19:07:20 - info:  databases constructor called.
+2023-03-09 19:07:20 - info:  redis_lib.constructor called.
+2023-03-09 19:07:20 - info:  mysqlLib.constructor called.
+2023-03-09 19:07:20 - info:  3/9/2023, 7:07:20 PM   >> Worker PID: 213229
+2023-03-09 19:07:20 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:07:20 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:07:21 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:07:22 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:07:22 - info:  connections open.
+2023-03-09 19:07:22 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:07:22 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:07:59 - info:  routes.index: 8b300ec8-e19b-4c09-9bc3-f4f46f618a77=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 19:07:59.332"}
+2023-03-09 19:07:59 - info:  inside deleteNewsDetail :: 
+2023-03-09 19:07:59 - info:  dbData: checkPlan(): 
+2023-03-09 19:07:59 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 19:07:59 - info:  deleteNewsDetail function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 19:07:59 - info:  dbData: checkNewsById(): 
+2023-03-09 19:07:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 19:07:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:07:59 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}]
+2023-03-09 19:07:59 - info:  deleteNewsDetail function :: Then 1 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}}
+2023-03-09 19:07:59 - info:  dbData: deleteNewsByID(): 
+2023-03-09 19:07:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  update news \n  set is_active = ?\n  where news_i"}
+2023-03-09 19:07:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:07:59 - info:  dbData: deleteNewsByID(): then 1: [{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":0},{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":0}]
+2023-03-09 19:07:59 - info:  deleteNewsDetail function :: Then 2 {"data":{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":0}}
+2023-03-09 19:07:59 - info:  routes.index: 8b300ec8-e19b-4c09-9bc3-f4f46f618a77=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 19:07:59.332","res_t":"2023-03-09 19:07:59.383","res_in":"0.051sec"}
+2023-03-09 19:08:13 - info:  databases constructor called.
+2023-03-09 19:08:13 - info:  redis_lib.constructor called.
+2023-03-09 19:08:13 - info:  mysqlLib.constructor called.
+2023-03-09 19:08:13 - info:  3/9/2023, 7:08:13 PM   >> Worker PID: 214369
+2023-03-09 19:08:13 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:08:13 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:08:14 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:08:14 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:08:14 - info:  connections open.
+2023-03-09 19:08:15 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:08:15 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:08:58 - info:  routes.index: 2c6ec69a-0269-4e7d-9a63-2ef6f8b4a328=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 19:08:58.659"}
+2023-03-09 19:08:58 - info:  inside deleteNewsDetail :: 
+2023-03-09 19:08:58 - info:  dbData: checkPlan(): 
+2023-03-09 19:08:58 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 19:08:58 - info:  deleteNewsDetail function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 19:08:58 - info:  dbData: checkNewsById(): 
+2023-03-09 19:08:58 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 19:08:58 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:08:58 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}]
+2023-03-09 19:08:58 - info:  deleteNewsDetail function :: Then 1 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}}
+2023-03-09 19:08:58 - info:  dbData: deleteNewsByID(): 
+2023-03-09 19:08:58 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  update news \n  set is_active = ?\n  where news_i"}
+2023-03-09 19:08:58 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:08:58 - info:  dbData: deleteNewsByID(): then 1: [{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":0},{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":0}]
+2023-03-09 19:08:58 - info:  deleteNewsDetail function :: Then 2 {"data":{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":0}}
+2023-03-09 19:08:58 - info:  routes.index: 2c6ec69a-0269-4e7d-9a63-2ef6f8b4a328=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 19:08:58.659","res_t":"2023-03-09 19:08:58.696","res_in":"0.037sec"}
+2023-03-09 19:10:32 - info:  databases constructor called.
+2023-03-09 19:10:32 - info:  redis_lib.constructor called.
+2023-03-09 19:10:32 - info:  mysqlLib.constructor called.
+2023-03-09 19:10:32 - info:  3/9/2023, 7:10:32 PM   >> Worker PID: 216621
+2023-03-09 19:10:32 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:10:32 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:10:33 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:10:33 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:10:33 - info:  connections open.
+2023-03-09 19:10:34 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:10:34 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:10:59 - info:  routes.index: 5c41ffb6-14f1-4017-8871-39788feba410=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 19:10:59.860"}
+2023-03-09 19:10:59 - info:  inside deleteNewsDetail :: 
+2023-03-09 19:10:59 - info:  dbData: checkPlan(): 
+2023-03-09 19:10:59 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 19:10:59 - info:  deleteNewsDetail function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 19:10:59 - info:  dbData: checkNewsById(): 
+2023-03-09 19:10:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 19:10:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:10:59 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}]
+2023-03-09 19:10:59 - info:  deleteNewsDetail function :: Then 1 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3723","newsTitle":"ghjnfg","newsDescription":"serfw fgf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"b75b7403-d741-4fb8-a930-e6144457ffdd"}}
+2023-03-09 19:10:59 - info:  dbData: deleteNewsByID(): 
+2023-03-09 19:10:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  update news \n  set is_active = ?\n  where news_i"}
+2023-03-09 19:10:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:10:59 - info:  dbData: deleteNewsByID(): then 1: [{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":0},{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":0}]
+2023-03-09 19:10:59 - error:  deleteNewsDetail function :: error:  {"type":{"status_code":200,"code":3063,"message":"No such news found"},"data":{}}
+2023-03-09 19:10:59 - info:  routes.index: 5c41ffb6-14f1-4017-8871-39788feba410=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3723","req_t":"2023-03-09 19:10:59.860","res_t":"2023-03-09 19:10:59.923","res_in":"0.063sec"}
+2023-03-09 19:11:33 - info:  routes.index: 0eb61fa8-2354-4e9f-85e5-493d0ea97be8=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 19:11:33.658"}
+2023-03-09 19:11:33 - info:  inside deleteNewsDetail :: 
+2023-03-09 19:11:33 - info:  dbData: checkPlan(): 
+2023-03-09 19:11:33 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 19:11:33 - info:  deleteNewsDetail function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 19:11:33 - info:  dbData: checkNewsById(): 
+2023-03-09 19:11:33 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 19:11:33 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:11:33 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 19:11:33 - info:  deleteNewsDetail function :: Then 1 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}}
+2023-03-09 19:11:33 - info:  dbData: deleteNewsByID(): 
+2023-03-09 19:11:33 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  update news \n  set is_active = ?\n  where news_i"}
+2023-03-09 19:11:33 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:11:33 - info:  dbData: deleteNewsByID(): then 1: [{"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":1},{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":0}]
+2023-03-09 19:11:33 - info:  deleteNewsDetail function :: Then 2 {"data":{"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":1}}
+2023-03-09 19:11:33 - info:  routes.index: 0eb61fa8-2354-4e9f-85e5-493d0ea97be8=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 19:11:33.658","res_t":"2023-03-09 19:11:33.681","res_in":"0.023sec"}
+2023-03-09 19:12:48 - info:  databases constructor called.
+2023-03-09 19:12:48 - info:  redis_lib.constructor called.
+2023-03-09 19:12:48 - info:  mysqlLib.constructor called.
+2023-03-09 19:12:49 - info:  3/9/2023, 7:12:49 PM   >> Worker PID: 219147
+2023-03-09 19:12:49 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:12:49 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:12:50 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:12:50 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:12:50 - info:  connections open.
+2023-03-09 19:12:50 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:12:50 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:12:59 - info:  routes.index: 5e374856-f581-4667-86ab-b7ef696cdcfc=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 19:12:59.537"}
+2023-03-09 19:12:59 - info:  inside deleteNewsDetail :: 
+2023-03-09 19:12:59 - info:  dbData: checkPlan(): 
+2023-03-09 19:12:59 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 19:12:59 - info:  deleteNewsDetail function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 19:12:59 - info:  dbData: checkNewsById(): 
+2023-03-09 19:12:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 19:12:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:12:59 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 19:12:59 - info:  deleteNewsDetail function :: Then 1 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}}
+2023-03-09 19:12:59 - info:  dbData: deleteNewsByID(): 
+2023-03-09 19:12:59 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  update news \n  set is_active = ?\n  where news_i"}
+2023-03-09 19:12:59 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:12:59 - info:  dbData: deleteNewsByID(): then 1: [{"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":1},{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":0}]
+2023-03-09 19:12:59 - error:  deleteNewsDetail function :: error:  {"type":{"status_code":200,"code":3063,"message":"No such news found"},"data":{}}
+2023-03-09 19:12:59 - info:  routes.index: 5e374856-f581-4667-86ab-b7ef696cdcfc=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 19:12:59.537","res_t":"2023-03-09 19:12:59.625","res_in":"0.088sec"}
+2023-03-09 19:13:35 - info:  databases constructor called.
+2023-03-09 19:13:35 - info:  redis_lib.constructor called.
+2023-03-09 19:13:35 - info:  mysqlLib.constructor called.
+2023-03-09 19:13:35 - info:  3/9/2023, 7:13:35 PM   >> Worker PID: 220248
+2023-03-09 19:13:35 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:13:35 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:13:36 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:13:36 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:13:36 - info:  connections open.
+2023-03-09 19:13:37 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:13:37 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:13:47 - info:  routes.index: 81ecb0a2-24d6-481d-adac-ff05519b6784=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 19:13:47.738"}
+2023-03-09 19:13:47 - info:  inside deleteNewsDetail :: 
+2023-03-09 19:13:47 - info:  dbData: checkPlan(): 
+2023-03-09 19:13:47 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 19:13:47 - info:  deleteNewsDetail function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 19:13:47 - info:  dbData: checkNewsById(): 
+2023-03-09 19:13:47 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 19:13:47 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:13:47 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 19:13:47 - info:  deleteNewsDetail function :: Then 1 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}}
+2023-03-09 19:13:47 - info:  dbData: deleteNewsByID(): 
+2023-03-09 19:13:47 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  update news \n  set is_active = ?\n  where news_i"}
+2023-03-09 19:13:47 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:13:47 - info:  dbData: deleteNewsByID(): then 1: [{"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":1},{"fieldCount":0,"affectedRows":0,"insertId":0,"info":"Rows matched: 0  Changed: 0  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":0}]
+2023-03-09 19:13:47 - error:  deleteNewsDetail function :: error:  {"type":{"status_code":200,"code":3063,"message":"No such news found"},"data":{}}
+2023-03-09 19:13:47 - info:  routes.index: 81ecb0a2-24d6-481d-adac-ff05519b6784=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 19:13:47.738","res_t":"2023-03-09 19:13:47.774","res_in":"0.036sec"}
+2023-03-09 19:14:08 - info:  databases constructor called.
+2023-03-09 19:14:08 - info:  redis_lib.constructor called.
+2023-03-09 19:14:08 - info:  mysqlLib.constructor called.
+2023-03-09 19:14:08 - info:  3/9/2023, 7:14:08 PM   >> Worker PID: 221292
+2023-03-09 19:14:08 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:14:08 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:14:09 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:14:09 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:14:09 - info:  connections open.
+2023-03-09 19:14:10 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:14:10 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:14:22 - info:  routes.index: 9ae50ef6-1a9e-4215-9cf3-8e4776b83faf=> API REQUEST::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 19:14:22.477"}
+2023-03-09 19:14:22 - info:  inside deleteNewsDetail :: 
+2023-03-09 19:14:22 - info:  dbData: checkPlan(): 
+2023-03-09 19:14:22 - info:  dbData: getRedisPlanKey(): 
+2023-03-09 19:14:22 - info:  deleteNewsDetail function {"planId":"f717a43a-826c-48a2-9a60-649c298cef09","planName":"basic","seeVoice":1,"seeUpdateProfile":1,"addVoice":1,"seeNews":1,"seeEvent":1,"addNews":1,"addEvent":1,"seeAchievement":1,"seeDetails":1,"spendAchievement":1,"applyCelebrity":0}
+2023-03-09 19:14:22 - info:  dbData: checkNewsById(): 
+2023-03-09 19:14:22 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  SELECT news_id as newsId, news_title as newsTit"}
+2023-03-09 19:14:22 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:14:22 - info:  dbData: checkNewsById(): then 1: [{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}]
+2023-03-09 19:14:22 - info:  deleteNewsDetail function :: Then 1 {"data":{"newsId":"ea472afd-23cf-4426-9040-9b090dfa3731","newsTitle":"af f","newsDescription":"asfdsaf","newsUrl":["/home/gopal/Downloads/demo/public/news/f6ed39a7-1634-4091-bd0e-d164b2898b6e/3298579949.png"],"categoryId":"u92821eb-ea03-476d-9652-d5b88b3c50f8"}}
+2023-03-09 19:14:22 - info:  dbData: deleteNewsByID(): 
+2023-03-09 19:14:22 - info:  mysqlLib.query request:: {"conn_name":"test","host":"localhost","query":"\n  update news \n  set is_active = ?\n  where news_i"}
+2023-03-09 19:14:22 - info:  mysqlLib.query success :: {"conn_name":"test","host":"localhost"}
+2023-03-09 19:14:22 - info:  dbData: deleteNewsByID(): then 1: [{"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":1},{"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":34,"warningStatus":0,"changedRows":1}]
+2023-03-09 19:14:22 - info:  deleteNewsDetail function :: Then 2 {"data":{"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":10,"warningStatus":0,"changedRows":1}}
+2023-03-09 19:14:22 - info:  routes.index: 9ae50ef6-1a9e-4215-9cf3-8e4776b83faf=> API RESPONSE::  {"req_ip":"::1","uri":"/demo/api/news/deleteNewsDetail?newsId=ea472afd-23cf-4426-9040-9b090dfa3731","req_t":"2023-03-09 19:14:22.477","res_t":"2023-03-09 19:14:22.517","res_in":"0.04sec"}
+2023-03-09 19:15:00 - info:  databases constructor called.
+2023-03-09 19:15:00 - info:  redis_lib.constructor called.
+2023-03-09 19:15:00 - info:  mysqlLib.constructor called.
+2023-03-09 19:15:00 - info:  3/9/2023, 7:15:00 PM   >> Worker PID: 221683
+2023-03-09 19:15:00 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:15:00 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:15:01 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:02 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:02 - info:  connections open.
+2023-03-09 19:15:02 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:15:02 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:15:23 - info:  databases constructor called.
+2023-03-09 19:15:23 - info:  redis_lib.constructor called.
+2023-03-09 19:15:23 - info:  mysqlLib.constructor called.
+2023-03-09 19:15:23 - info:  3/9/2023, 7:15:23 PM   >> Worker PID: 222505
+2023-03-09 19:15:23 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:15:23 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:15:24 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:24 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:24 - info:  connections open.
+2023-03-09 19:15:24 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:15:24 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:15:27 - info:  databases constructor called.
+2023-03-09 19:15:27 - info:  redis_lib.constructor called.
+2023-03-09 19:15:27 - info:  mysqlLib.constructor called.
+2023-03-09 19:15:27 - info:  3/9/2023, 7:15:27 PM   >> Worker PID: 222554
+2023-03-09 19:15:27 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:15:27 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:15:28 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:28 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:28 - info:  connections open.
+2023-03-09 19:15:28 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:15:28 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:15:38 - info:  databases constructor called.
+2023-03-09 19:15:38 - info:  redis_lib.constructor called.
+2023-03-09 19:15:38 - info:  mysqlLib.constructor called.
+2023-03-09 19:15:38 - info:  3/9/2023, 7:15:38 PM   >> Worker PID: 222672
+2023-03-09 19:15:38 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:15:38 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:15:39 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:39 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:39 - info:  connections open.
+2023-03-09 19:15:39 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:15:39 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:15:43 - info:  databases constructor called.
+2023-03-09 19:15:43 - info:  redis_lib.constructor called.
+2023-03-09 19:15:43 - info:  mysqlLib.constructor called.
+2023-03-09 19:15:43 - info:  3/9/2023, 7:15:43 PM   >> Worker PID: 222953
+2023-03-09 19:15:43 - info:  redisLib.init, initializing redis connection  {"port":"6379","host":"localhost","uri":"redis://localhost:6379/"}
+2023-03-09 19:15:43 - info:  redisLib.init, success redis connection  {"port":"6379","host":"localhost"}
+2023-03-09 19:15:44 - info:  mysqlLib.init connecting with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:44 - info:  mysqlLib.init connection established with mysql {"conn_name":"test","host":"localhost"}
+2023-03-09 19:15:44 - info:  connections open.
+2023-03-09 19:15:45 - info:  Initializing swagger doc Routes Completed
+2023-03-09 19:15:45 - info:  SERVER SWAGGER API-DOC URL: http://localhost:3000/demo/api/docs
+2023-03-09 19:15:48 - warn:  redisLib.close, function called {"port":"6379","host":"localhost"}
+2023-03-09 19:15:48 - warn:  mysqlLib.close, connection close {"host":"localhost","conn_name":"test"}
+2023-03-09 19:15:48 - info:  success connection closed.
